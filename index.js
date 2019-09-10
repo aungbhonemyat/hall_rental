@@ -61,24 +61,7 @@ app.post('/webhook', (req, res) => {
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
 	  
-	  var senderID = webhook_event.sender.id;
-	  console.log('senderID',senderID);
-	  if(webhook_event.postback){
-	  var userReply =webhook_event.postback.payload;
-	  console.log('reply', userReply);
-	  }
-	  if(webhook_event.message){if(webhook_event.message.text){
-	  var userCmt= webhook_event.message.text;
-	  console.log('userText',userCmt);
-	  }
-	  if(webhook_event.message.attachments){
-	  var userPhoto=webhook_event.message.attachments;
-	  console.log('userImage',userPhoto);
-	  }}
 	  
-	 
-	  //if(userReply==''){
-	  //}
 	  
 	  
     });
