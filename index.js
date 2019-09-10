@@ -7,6 +7,7 @@ requestify= require('requestify'),
   express = require('express'),
   bodyParser = require('body-parser'),
   app = express().use(bodyParser.json()); // creates express http server
+  Token='EAAFhHsMzRT0BAJuptKg7shXUjIWchP0OKFOZA5KVPE3b3N8n60FAgBAHGZAYGvG284M8An7e1WXZBBoZCwW7UhFT1XadnuAmVSx4pzZCyHH18Nv6dAjVVFXafc2QXjs7geXJxNKNMvweJjHjdfDexZCclztuyHJsUyS0CSTG2rPqAhu2DS8prt';
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
@@ -74,6 +75,11 @@ app.post('/webhook', (req, res) => {
 	  var userPhoto=webhook_event.message.attachments;
 	  console.log('userImage',userPhoto);
 	  }}
+	  
+	 
+	  //if(userReply==''){
+	  //}
+	  
 	  
     });
 
