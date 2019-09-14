@@ -33,7 +33,7 @@ requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_tok
     "greeting": [
     {
       "locale":"default",
-      "text":"Hello {{user_first_name}}! \nHave a nice adventure!!" 
+      "text":"Hello {{user_first_name}}! \nWe provide for your service!!" 
     }
   ]
 
@@ -94,6 +94,9 @@ app.post('/webhook', (req, res) => {
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
 	  
+	  var senderID= webhook_event.sender.id;
+	  console.log('senderID', senderID);
+	  if(webhook_event)
 	  
 	  
 	  
