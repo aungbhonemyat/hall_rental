@@ -152,16 +152,16 @@ let button3 = {
 }
 
 
-generictemplate.message.elements.buttons = []
-generictemplate.message.elements.buttons.push(button);
-generictemplate.message.elements.buttons.push(button2);
-generictemplate.message.elements.buttons.push(button3);
+generictemplate.message.attachment.payload.elements.buttons = []
+generictemplate.message.attachment.payload.elements.buttons.push(button);
+generictemplate.message.attachment.payload.elements.buttons.push(button2);
+generictemplate.message.attachment.payload.elements.buttons.push(button3);
 
-generictemplate.message.elements.title = ''
-generictemplate.message.elements.title = 'Hi' 
+generictemplate.message.attachment.payload.elements.title = ''
+generictemplate.message.attachment.payload.elements.title = 'Hi' 
 
-generictemplate.message.elements.subtitle = ''
-generictemplate.message.elements.subtitle = 'Hi' 
+generictemplate.message.attachment.payload.elements.subtitle = ''
+generictemplate.message.attachment.payload.elements.subtitle = 'Hi' 
  
 requestify (sendmessageurl,generictemplate).then(function(success){console.log('successful template')})
   
