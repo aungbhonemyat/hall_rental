@@ -9,28 +9,7 @@ requestify= require('requestify'),
   PageAccessToken='EAAFhHsMzRT0BAJuptKg7shXUjIWchP0OKFOZA5KVPE3b3N8n60FAgBAHGZAYGvG284M8An7e1WXZBBoZCwW7UhFT1XadnuAmVSx4pzZCyHH18Nv6dAjVVFXafc2QXjs7geXJxNKNMvweJjHjdfDexZCclztuyHJsUyS0CSTG2rPqAhu2DS8prt',
   app = express().use(bodyParser.json());
   const sendmessageurl = 'https://graph.facebook.com/v4.0/me/messages?access_token='+PageAccessToken
-let generictemplate = {        
-        "recipient":{
-    "id":senderID
-  },
-  "message":{
-    "attachment":{
-      "type":"template",
-      "payload": {
-  "template_type":"generic",
-  "elements":
-     {
-      "title":"",
-      "image_url":"",
-      "subtitle":"",
-      "buttons":[]      
-    }
-    
-  
-}
-    }
-  }
-      }
+
   
 requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+PageAccessToken,
       {  "get_started": {"payload": "Hi"},      
@@ -119,7 +98,28 @@ app.post('/webhook', (req, res) => {
       console.log(webhook_event);
 	  	  
 	  var senderID= webhook_event.sender.id;
-	  console.log('senderID', senderID);
+	  let generictemplate = {        
+        "recipient":{
+    "id":senderID
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload": {
+  "template_type":"generic",
+  "elements":
+     {
+      "title":"",
+      "image_url":"",
+      "subtitle":"",
+      "buttons":[]      
+    }
+    
+  
+}
+    }
+  }
+      }
 	  if(webhook_event.postback){
 		var userButton=webhook_event.postback.payload;
 		console.log('reply',userButton);
