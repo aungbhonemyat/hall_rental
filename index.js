@@ -124,7 +124,7 @@ requestify.post(sendmessageurl,
       "type":"template",
       "payload": {
   "template_type":"generic",
-  "elements":
+  "elements":[
      {
       "title":"Hi",
 	  "image_url":"https://sites.psu.edu/siowfa16/files/2016/10/YeDYzSR-10apkm4.png",
@@ -143,7 +143,7 @@ requestify.post(sendmessageurl,
   "payload": "payload 3"
 }
 	  ]      
-    }
+    }]
     
   
 }
