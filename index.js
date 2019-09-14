@@ -93,7 +93,7 @@ app.post('/webhook', (req, res) => {
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
-	  
+	  	  
 	  var senderID= webhook_event.sender.id;
 	  console.log('senderID', senderID);
 	  if(webhook_event.postback){
@@ -108,7 +108,14 @@ app.post('/webhook', (req, res) => {
 		var userImage=webhook_event.message.attachments;
 		console.log('userPhoto',userImage);
 		}}
-	   
+	  
+	     "messaging_type": "<MESSAGING_TYPE>",
+"recipient":{
+  "id":"<PSID>"
+},
+"message":{
+  "text":"hello, world!"
+}
     });
 
     // Returns a '200 OK' response to all requests
