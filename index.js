@@ -163,7 +163,7 @@ generictemplate.message.elements.title = 'Hi'
 generictemplate.message.elements.subtitle = ''
 generictemplate.message.elements.subtitle = 'Hi' 
  
-requestify (sendmessageurl,generictemplate).then(function(success){console.log(successful template)})
+requestify (sendmessageurl,generictemplate).then(function(success){console.log('successful template')})
   
   }
   
