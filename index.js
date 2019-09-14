@@ -96,10 +96,19 @@ app.post('/webhook', (req, res) => {
 	  
 	  var senderID= webhook_event.sender.id;
 	  console.log('senderID', senderID);
-	  if(webhook_event)
-	  
-	  
-	  
+	  if(webhook_event.postback){
+		var userButton=webhook_event.postback.payload;
+		console.log('reply',userButton);
+		}
+	if(webhook_event.message){if(webhook_event.message.text){
+		var userComment=webhook_event.message.text;
+		console.log('userComment',userComment);
+		}
+	if(webhook_event.message.attachments){
+		var userImage=webhook_event.message.attachments;
+		console.log('userPhoto',userImage);
+		}}
+	   
     });
 
     // Returns a '200 OK' response to all requests
