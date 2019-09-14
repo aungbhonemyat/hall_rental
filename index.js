@@ -33,7 +33,7 @@ requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_tok
     "greeting": [
     {
       "locale":"default",
-      "text":"Hello {{user_first_name}}! \nWe provide for your service!!" 
+      "text":"Hello {{user_first_name}}! \n We provide for your service!!" 
     }
   ]
 
