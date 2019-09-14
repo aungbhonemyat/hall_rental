@@ -8,6 +8,28 @@ requestify= require('requestify'),
   bodyParser = require('body-parser'),
   PageAccessToken='EAAFhHsMzRT0BAJuptKg7shXUjIWchP0OKFOZA5KVPE3b3N8n60FAgBAHGZAYGvG284M8An7e1WXZBBoZCwW7UhFT1XadnuAmVSx4pzZCyHH18Nv6dAjVVFXafc2QXjs7geXJxNKNMvweJjHjdfDexZCclztuyHJsUyS0CSTG2rPqAhu2DS8prt',
   app = express().use(bodyParser.json());
+ requestify.post('http://graph.facebook.com/v2.6/me/messenger_profile?access_token='+PageAccessToken,
+ { "get_started":{"payload":"Hi"},
+ "persistent_menu":[
+ {
+	"locale": "default",
+	"composer_input_disabled": false,
+	"call_to_actions":[
+	{
+		"type": "postback",
+		"title": "Home",
+		"payload": "Hi"
+	},
+	{
+		"type": "web_url",
+		"title": "Visit Page",
+		"url": "https://mym-acavxb.firebaseapp.com/index.html",
+		"webview_height_ratio": "tail"
+		}
+	]
+}
+],
+})
   
 
 // Sets server port and logs message on success
