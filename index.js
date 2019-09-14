@@ -109,9 +109,9 @@ app.post('/webhook', (req, res) => {
   "template_type":"generic",
   "elements":
      {
-      "title":"",
+      "title":"Hi",
       "image_url":"",
-      "subtitle":"",
+      "subtitle":"test",
       "buttons":[]      
     }
     
@@ -152,11 +152,7 @@ let button3 = {
 }
 generictemplate.message.attachment.payload.elements.buttons.push(button);
 generictemplate.message.attachment.payload.elements.buttons.push(button2);
-generictemplate.message.attachment.payload.elements.buttons.push(button3);
-
-generictemplate.message.attachment.payload.elements.title = "Hi"; 
-
-generictemplate.message.attachment.payload.elements.subtitle = "Hi"; 
+generictemplate.message.attachment.payload.elements.buttons.push(button3); 
  
 requestify.post(sendmessageurl,
 generictemplate).then(function(success){
