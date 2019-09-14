@@ -150,22 +150,21 @@ let button3 = {
   "title": "button 3",
   "payload": "payload 3"
 }
-
-
-generictemplate.message.attachment.payload.elements.buttons = []
 generictemplate.message.attachment.payload.elements.buttons.push(button);
 generictemplate.message.attachment.payload.elements.buttons.push(button2);
 generictemplate.message.attachment.payload.elements.buttons.push(button3);
 
-generictemplate.message.attachment.payload.elements.title = ''
 generictemplate.message.attachment.payload.elements.title = 'Hi' 
 
-generictemplate.message.attachment.payload.elements.subtitle = ''
 generictemplate.message.attachment.payload.elements.subtitle = 'Hi' 
  
-requestify.post(sendmessageurl,generictemplate).then(function(success){console.log('successful template')})
+requestify.post(sendmessageurl,
+generictemplate).then(function(success){
+console.log('successful template');
+}).catch(function(error){
+console.log('error', error);
   
-  }
+  });
   
   
     });
