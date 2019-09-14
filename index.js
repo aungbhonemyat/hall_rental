@@ -28,7 +28,7 @@ requestify= require('requestify'),
 		}
 	]
 }
-],
+]
 })
   
 
