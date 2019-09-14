@@ -8,6 +8,30 @@ requestify= require('requestify'),
   bodyParser = require('body-parser'),
   PageAccessToken='EAAFhHsMzRT0BAJuptKg7shXUjIWchP0OKFOZA5KVPE3b3N8n60FAgBAHGZAYGvG284M8An7e1WXZBBoZCwW7UhFT1XadnuAmVSx4pzZCyHH18Nv6dAjVVFXafc2QXjs7geXJxNKNMvweJjHjdfDexZCclztuyHJsUyS0CSTG2rPqAhu2DS8prt',
   app = express().use(bodyParser.json());
+  const sendmessageurl = 'https://graph.facebook.com/v4.0/me/messages?access_token='+PageAccessToken
+let generictemplate = {        
+        "recipient":{
+    "id":senderID
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload": {
+  "template_type":"generic",
+  "elements":
+     {
+      "title":"",
+      "image_url":"",
+      "subtitle":"",
+      "buttons":[]      
+    }
+    
+  ]
+}
+    }
+  }
+      }
+  
 requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+PageAccessToken,
       {  "get_started": {"payload": "Hi"},      
         "persistent_menu": [
@@ -108,14 +132,40 @@ app.post('/webhook', (req, res) => {
 		var userImage=webhook_event.message.attachments;
 		console.log('userPhoto',userImage);
 		}}
-	  
-	     "messaging_type": "<MESSAGING_TYPE>",
-"recipient":{
-  "id":"<PSID>"
+		
+	 if(userButton == 'Hi'){
+
+let button = {
+  "type": "postback",
+  "title": "button 1",
+  "payload": "payload 1"
 },
-"message":{
-  "text":"hello, world!"
+{
+  "type": "postback",
+  "title": "button 2",
+  "payload": "payload 2"
+},
+{
+  "type": "postback",
+  "title": "button 3",
+  "payload": "payload 3"
 }
+
+
+generictemplate.message.elements.buttons = []
+generictemplate.message.elements.buttons.push(button);
+
+generictemplate.message.elements.title = ''
+generictemplate.message.elements.title = 'Hi' 
+
+generictemplate.message.elements.subtitle = ''
+generictemplate.message.elements.subtitle = 'Hi' 
+ 
+requestify (sendmessageurl,generictemplate).then(function(success){console.log(successful template)})
+  
+  }
+  
+  
     });
 
     // Returns a '200 OK' response to all requests
