@@ -26,7 +26,7 @@ let generictemplate = {
       "buttons":[]      
     }
     
-  ]
+  
 }
     }
   }
