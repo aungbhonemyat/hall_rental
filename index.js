@@ -29,6 +29,8 @@ requestify= require('requestify'),
 	]
 }
 ]
+}).then(function(success){
+	console.log('getting_menu.success');
 })
   
 
