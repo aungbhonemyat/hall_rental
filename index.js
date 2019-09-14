@@ -154,9 +154,9 @@ generictemplate.message.attachment.payload.elements.buttons.push(button);
 generictemplate.message.attachment.payload.elements.buttons.push(button2);
 generictemplate.message.attachment.payload.elements.buttons.push(button3);
 
-generictemplate.message.attachment.payload.elements.title = 'Hi' 
+generictemplate.message.attachment.payload.elements.title = "Hi"; 
 
-generictemplate.message.attachment.payload.elements.subtitle = 'Hi' 
+generictemplate.message.attachment.payload.elements.subtitle = "Hi"; 
  
 requestify.post(sendmessageurl,
 generictemplate).then(function(success){
