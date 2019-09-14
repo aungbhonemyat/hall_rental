@@ -110,7 +110,6 @@ app.post('/webhook', (req, res) => {
   "elements":
      {
       "title":"Hi",
-      "image_url":"",
       "subtitle":"test",
       "buttons":[]      
     }
