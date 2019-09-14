@@ -139,13 +139,13 @@ let button = {
   "type": "postback",
   "title": "button 1",
   "payload": "payload 1"
-},
-{
+}
+let button2 = {
   "type": "postback",
   "title": "button 2",
   "payload": "payload 2"
-},
-{
+}
+let button3 = {
   "type": "postback",
   "title": "button 3",
   "payload": "payload 3"
@@ -154,6 +154,8 @@ let button = {
 
 generictemplate.message.elements.buttons = []
 generictemplate.message.elements.buttons.push(button);
+generictemplate.message.elements.buttons.push(button2);
+generictemplate.message.elements.buttons.push(button3);
 
 generictemplate.message.elements.title = ''
 generictemplate.message.elements.title = 'Hi' 
