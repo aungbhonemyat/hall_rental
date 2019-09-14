@@ -98,27 +98,6 @@ app.post('/webhook', (req, res) => {
       console.log(webhook_event);
 	  	  
 	  var senderID= webhook_event.sender.id;
-	  let generictemplate = {        
-        "recipient":{
-    "id":senderID
-  },
-  "message":{
-    "attachment":{
-      "type":"template",
-      "payload": {
-  "template_type":"generic",
-  "elements":
-     {
-      "title":"Hi",
-      "subtitle":"test",
-      "buttons":[]      
-    }
-    
-  
-}
-    }
-  }
-      }
 	  if(webhook_event.postback){
 		var userButton=webhook_event.postback.payload;
 		console.log('reply',userButton);
@@ -132,29 +111,44 @@ app.post('/webhook', (req, res) => {
 		console.log('userPhoto',userImage);
 		}}
 		
-	 if(userButton == 'Hi'){
+	 if(userButton == 'Hi' || userComment == 'Hi'){
 
-let button = {
+ 
+requestify.post(sendmessageurl,
+{        
+        "recipient":{
+    "id":senderID
+  },
+  "message":{
+    "attachment":{
+      "type":"template",
+      "payload": {
+  "template_type":"generic",
+  "elements":
+     {
+      "title":"Hi",
+      "subtitle":"test",
+      "buttons":[{
   "type": "postback",
   "title": "button 1",
   "payload": "payload 1"
-}
-let button2 = {
+},{
   "type": "postback",
   "title": "button 2",
   "payload": "payload 2"
-}
-let button3 = {
+},{
   "type": "postback",
   "title": "button 3",
   "payload": "payload 3"
 }
-generictemplate.message.attachment.payload.elements.buttons.push(button);
-generictemplate.message.attachment.payload.elements.buttons.push(button2);
-generictemplate.message.attachment.payload.elements.buttons.push(button3); 
- 
-requestify.post(sendmessageurl,
-generictemplate).then(function(success){
+	  ]      
+    }
+    
+  
+}
+    }
+  }
+      }).then(function(success){
 console.log('successful template');
 }).catch(function(error){
 console.log('error', error);
