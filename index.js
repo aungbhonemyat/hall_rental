@@ -213,11 +213,12 @@ app.post('/webhook', (req, res) => {
   }
 
   if(userButton == 'createEvent'){
+    requestify.get(`https://graph.facebook.com/<PSID>?fields=first_name,last_name,profile_pic&access_token=`+PageAccessToken).then(function(userProfile){
       var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
   var eventOTP = 'Eve'+randomNumber
   console.log(eventOTP)
   db.collection('Events').add({
-    hostname: webhook_event.sender.name,
+    hostname: userProfile.firstname,
     eventId: `sample`,
     eventOTP: eventOTP
   }).then(function(relt){
@@ -225,6 +226,8 @@ app.post('/webhook', (req, res) => {
   }).catch(function(error){
     console.log(error)
   })
+    })
+      
     //carousel here
   }
 
