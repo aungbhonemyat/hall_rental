@@ -217,7 +217,7 @@ app.post('/webhook', (req, res) => {
       var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
   var eventOTP = 'Eve'+randomNumber
   console.log(eventOTP)
-  console.log(userProfile.first_name)
+  console.log(userProfile)
   db.collection('Events').doc(senderID).set({
     hostname: userProfile.first_name,
     eventId: `sample`,
