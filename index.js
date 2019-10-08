@@ -173,8 +173,10 @@ app.post('/webhook', (req, res) => {
     });
   } 
 
-  if(userComment.includes('Eve')){
+  if(userComment){
+    if(userComment.includes('Eve')){
     console.log('user OTP is:', userComment)
+  }
   }
 
 //Host Flow
