@@ -160,7 +160,6 @@ app.post('/webhook', (req, res) => {
   if(userButton == 'Guest' || userComment == 'Guest'){ 
     requestify.post(sendmessageurl,
       { 
-        "messaging_type": "text",
         "recipient":{
         "id":senderID
       },
