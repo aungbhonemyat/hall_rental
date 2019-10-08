@@ -116,10 +116,8 @@ app.post('/webhook', (req, res) => {
 
 	if(userButton == 'Hi' || userComment == 'Hi'){ 
     db.collection('Worker').where('ID', '==', senderID).get().then(function(result){
-      console.log(result.size)
-      result.forEach(function(relt){
-
-        if(!relt){
+      if(result.size == 0){
+      result.forEach(function(relt){        
           console.log('empty relt')
           requestify.post(sendmessageurl,
       { 
@@ -149,13 +147,14 @@ app.post('/webhook', (req, res) => {
     }).catch(function(error){
       console.log('error', error);  
     });
+  })
         } else {
         //workerFlow
         console.log('worker flow')
       }
     })
-      })
-    }
+      }
+    
    
 
 //Guest Flow
