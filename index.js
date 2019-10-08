@@ -222,7 +222,7 @@ app.post('/webhook', (req, res) => {
     eventOTP: eventOTP
   }
 
-  db.collection('Events').set(data).then(function(relt){
+  db.collection('Events').add(data).then(function(relt){
     console.log(`ok`)
   }).catch(function(error){
     console.log(error)
