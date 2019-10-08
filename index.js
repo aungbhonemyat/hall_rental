@@ -215,14 +215,12 @@ app.post('/webhook', (req, res) => {
   if(userButton == 'createEvent'){
       var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
   var eventOTP = 'Eve'+randomNumber
-
-  let data = {
+  console.log(eventOTP)
+  db.collection('Events').add({
     hostname: webhook_event.sender.name,
     eventId: `sample`,
     eventOTP: eventOTP
-  }
-
-  db.collection('Events').add(data).then(function(relt){
+  }).then(function(relt){
     console.log(`ok`)
   }).catch(function(error){
     console.log(error)
