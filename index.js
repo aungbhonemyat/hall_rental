@@ -116,6 +116,7 @@ app.post('/webhook', (req, res) => {
 
 	if(userButton == 'Hi' || userComment == 'Hi'){ 
     db.collection('Worker').where('ID', '==', senderID).get().then(function(result){
+      console.log(result.size)
       result.forEach(function(relt){
 
         if(!relt){
