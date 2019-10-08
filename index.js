@@ -115,7 +115,7 @@ app.post('/webhook', (req, res) => {
 //Welcome Message
 
 	if(userButton == 'Hi' || userComment == 'Hi'){ 
-    var profileRef = db.collection('Worker').where('ID', '==', senderID).then(function(result){
+    db.collection('Worker').where('ID', '==', senderID).get().then(function(result){
       result.forEach(function(relt){
         if(relt.doc.id !== senderID){
           requestify.post(sendmessageurl,
