@@ -176,7 +176,15 @@ app.post('/webhook', (req, res) => {
   if(userComment){
     if(userComment.includes('Eve')){
     console.log('user OTP is:', userComment)
+    db.collection('Worker').where('eventOTP', '==', userComment).get().then(function(result){
+      if(result.size == 0){
+        console.log('no event')
+  }else{
+    result.forEach(function(relt){
+      console.log('ur event is:', relt.data().eventName)
+    })
   }
+})
   }
 
 //Host Flow
