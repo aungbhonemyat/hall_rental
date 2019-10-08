@@ -212,6 +212,26 @@ app.post('/webhook', (req, res) => {
     });
   }
 
+  if(userButton == 'createEvent'){
+      var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
+  var eventOTP = 'Eve'+randomNumber
+
+  let data = {
+    hostname: webhook_event.sender.name,
+    eventId: `sample`,
+    eventOTP: eventOTP
+  }
+
+  db.collection('Events').doc().set(data).then(function(relt){
+    console.log(`ok`)
+  }).catch(function(error){
+    console.log(error)
+  })
+    //carousel here
+  }
+
+
+
   });
 
     // Returns a '200 OK' response to all requests
