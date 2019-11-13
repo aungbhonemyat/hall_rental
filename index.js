@@ -262,7 +262,7 @@ requestify.post(sendmessageurl,
           },{
             "title":"Seminar",
             "image_url":"https://petersfancybrownhats.com/company_image.png",
-            "subtitle":"knowledge is power ranger",
+            "subtitle":"Seminar",
             "buttons":[{
                 "type":"postback",
                 "title":"Create",
