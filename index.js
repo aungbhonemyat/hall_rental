@@ -273,27 +273,26 @@ requestify.post(sendmessageurl,
               }              
             ]      
           }
-          if(userButton=='WeddingCreate'){
-            requestify.post(ssendmessageurl,
-            {
-              "recipient":}
-              "id":sendeerID
-            })
-          }
-
-            
-
- ]
-
-
-}
+          ]
         }
       }
-    }).then(function(success){
-      console.log('successful template');
-    }).catch(function(error){
-      console.log('error', error);  
-    });
+    }
+  })}
+          if(userButton=='WeddingCreate'){
+            requestify.post(sendmessageurl,
+          },
+          "message":{
+        "attachment":{
+          "type":"template",
+            "payload": {
+            "template_type":"button",
+            "text":"Do you wish to Create or Manage event?",
+            "buttons":[{
+              "type":"postback",
+              "title":"Create",
+              "payload":"createEvent"
+            }
+            
 
 
     /*requestify.get(`https://graph.facebook.com/`+senderID+`?fields=first_name,last_name,profile_pic&access_token=`+PageAccessToken).then(function(userProfile){
