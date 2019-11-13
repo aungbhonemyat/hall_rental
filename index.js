@@ -184,7 +184,7 @@ app.post('/webhook', (req, res) => {
     if(userComment.includes('Eve')){
     console.log('user OTP is:', userComment)
     db.collection('Events').where('eventOTP', '==', userComment).get().then(function(result){
-      if(result.size == 0){
+      if(result.empty){
         console.log('no event')
   }else{
     result.forEach(function(relt){
@@ -229,12 +229,46 @@ app.post('/webhook', (req, res) => {
   }
 
   if(userButton == 'createEvent'){
-    requestify.get(`https://graph.facebook.com/`+senderID+`?fields=first_name,last_name,profile_pic&access_token=`+PageAccessToken).then(function(userProfile){
+requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+        },
+      "message":{
+        "attachment":{
+          "type":"template",
+            "payload": {
+  "template_type":"generic",
+  "elements":[{
+            "title":"Wedding",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"Wedding",
+            "buttons":[{
+                "type":"postback",
+                "title":"Create",
+                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              }              
+            ]      
+          }
+  ]
+}
+        }
+      }
+    }).then(function(success){
+      console.log('successful template');
+    }).catch(function(error){
+      console.log('error', error);  
+    });
+
+
+    /*requestify.get(`https://graph.facebook.com/`+senderID+`?fields=first_name,last_name,profile_pic&access_token=`+PageAccessToken).then(function(userProfile){
       var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
-  var eventOTP = 'Eve'+randomNumber
+      var hostId = senderID.substring(1,4)
+  var eventOTP = 'Eve'+randomNumber+hostId
   console.log(eventOTP)
   db.collection('Events').doc(senderID).set({
-    hostname: userProfile.body.first_name+' '+userProfile.body.last_name,
+    hostname: userProfile.first_name+' '+userProfile.last_name,
+    eventName: userComment,
     eventId: `sample`,
     eventOTP: eventOTP,
     hostID: senderID
@@ -243,7 +277,7 @@ app.post('/webhook', (req, res) => {
   }).catch(function(error){
     console.log(error)
   })
-    })
+    })*/
       
     //carousel here
   }
