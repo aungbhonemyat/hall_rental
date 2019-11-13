@@ -259,6 +259,16 @@ requestify.post(sendmessageurl,
                 "payload":"DEVELOPER_DEFINED_PAYLOAD"
               }              
             ]      
+          },{
+            "title":"Seminar",
+            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "subtitle":"knowledge is power ranger",
+            "buttons":[{
+                "type":"postback",
+                "title":"Create",
+                "payload":"DEVELOPER_DEFINED_PAYLOAD"
+              }              
+            ]      
           }
   ]
 }
