@@ -111,9 +111,9 @@ app.post('/webhook', (req, res) => {
     //start
     //Welcome Message
 
-  if(userButton == 'Hi' || userComment == 'Hi' || userComment == 'hi'){ 
-    db.collection('Worker').where('ID', '==', senderID).get().then(function(result){
-      if(result.size == 0){     
+  if(userButton == 'Hi' || userComment == 'Hi' || userComment == 'httpsi'){ 
+    db.collection('Worker').where('ID', '==', `${senderID}`).get().then(function(result){
+      if(result.empty){     
           console.log('empty relt')
           requestify.post(sendmessageurl,
       { 
