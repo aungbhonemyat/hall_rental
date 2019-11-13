@@ -115,7 +115,10 @@ app.post('/webhook', (req, res) => {
     db.collection('Worker').where('ID', '==', `${senderID}`).get().then(function(result){
       if(result.empty){     
           console.log('empty relt')
-          requestify.post(sendmessageurl,
+        } else {
+        //workerFlow
+        console.log('worker flow')
+        requestify.post(sendmessageurl,
       { 
         "recipient":{
         "id":senderID
@@ -143,9 +146,6 @@ app.post('/webhook', (req, res) => {
     }).catch(function(error){
       console.log('error', error);  
     });
-        } else {
-        //workerFlow
-        console.log('worker flow')
       }
     })
       }
