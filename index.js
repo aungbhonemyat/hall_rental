@@ -58,7 +58,7 @@ app.get('/', (req, res)=>{
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN = "388259728540989"
+  var VERIFY_TOKEN = "388259728540989"
     
   // Parse the query params
   let mode = req.query['hub.mode'];
@@ -103,18 +103,15 @@ app.post('/webhook', (req, res) => {
 		var userButton=webhook_event.postback.payload;
 		console.log('reply',userButton);
 		}
-	if(webhook_event.message){if(webhook_event.message.text){
+	if(webhook_event.message){
+    if(webhook_event.message.text){
 		var userComment=webhook_event.message.text;
 		console.log('userComment',userComment);
-		}
-	if(webhook_event.message.attachments){
-		var userImage=webhook_event.message.attachments;
-		console.log('userPhoto',userImage);
-		}}
-		
-//Welcome Message
 
-	if(userButton == 'Hi' || userComment == 'Hi'){ 
+    //start
+    //Welcome Message
+
+  if(userButton == 'Hi' || userComment == 'Hi' || userComment == 'hi'){ 
     db.collection('Worker').where('ID', '==', senderID).get().then(function(result){
       if(result.size == 0){     
           console.log('empty relt')
@@ -153,7 +150,17 @@ app.post('/webhook', (req, res) => {
     })
       }
     
-   
+ 
+
+    //end
+		}
+	if(webhook_event.message.attachments){
+		var userImage=webhook_event.message.attachments;
+		console.log('userPhoto',userImage);
+		}
+  }
+		
+  
 
 //Guest Flow
 
