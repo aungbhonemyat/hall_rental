@@ -3,42 +3,22 @@
 <html lang="en">
 
 <head>
-
-    <link rel="stylesheet" href="main.css">
-    <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
-
-    <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
-
-    <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-
-    <!-- Main CSS-->
-    <link href="main.css" rel="stylesheet" media="all">
-
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/nVpuz7R.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Hall Rental</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYot1SAcp1+c8xmyTe9GYg119a69psu" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocl+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
+    <div class="container-fluid" style="background-color: pink;">
+                <div style="margin-top: 10px; border-radius: 15px; width: 80%; background-color: white;">
                     <h2 class="title">Wedding form</h2>
                     
-                        <div class="row row-space">
+                        <div class="row">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Name of bride</label>
@@ -52,7 +32,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-space">
+                        <div class="row">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Select your wedding date</label>
@@ -63,7 +43,7 @@
                             </div>
                             
                         </div>
-                        <div class="row row-space">
+                        <div class="row">
                             
                             <div class="col-2">
                                 <div class="input-group">
@@ -76,8 +56,6 @@
                      <button type="button" onclick="register()" id="button">Submit</button>
                     
                 </div>
-            </div>
-        </div>
     </div>
 
     
@@ -138,7 +116,7 @@ function register() {
         var hostId = senderID.substring(1,4)
         var eventId = 'Eve'+randomNumber+hostId
         var eventOTP = btoa(randomNumber+hostId)
-        db.collection('Events').doc(senderID).set({
+        db.collection('Events').doc(eventId).set({
     hostname: userProfile.first_name+' '+userProfile.last_name,
     eventType: 'Wedding',
     eventId: `${eventId}`,
