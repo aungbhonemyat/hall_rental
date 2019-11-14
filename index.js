@@ -44,15 +44,20 @@ requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_tok
 }).then(function(success){
   console.log('persistent_menu success');
 })
-  
+
+app.set('views', __dirname+'/views')
+app.set('view engine', 'ejs')  
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res)=>{
-	res.send("Hello vro!");
+	res.send("Hello World");
 })
 
+app.get('/weddingReg/:id', function(req, res){
+  res.render('wedding', { senderId: `${req.params.id}` })
+})
 
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
