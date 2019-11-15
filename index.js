@@ -252,9 +252,10 @@ requestify.post(sendmessageurl,
             "image_url":"https://petersfancybrownhats.com/company_image.png",
             "subtitle":"Wedding",
             "buttons":[{
-                "type":"postback",
+                "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
                 "title":"Create",
-                "payload":"WeddingCreate"
+                "webview_height_ratio":"tall"
               }              
             ]      
           },{
@@ -262,9 +263,9 @@ requestify.post(sendmessageurl,
             "image_url":"https://petersfancybrownhats.com/company_image.png",
             "subtitle":"Party",
             "buttons":[{
-                "type":"postback",
-                "title":"Create",
-                "payload":"PartyCreate"
+                "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
+                "title":"Create"
               }              
             ]      
           },{
