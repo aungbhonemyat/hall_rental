@@ -21,9 +21,6 @@
 <style>
 #customers {
     margin: auto;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 20%;
 }
 
 body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
@@ -52,99 +49,45 @@ body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
 </head>
 
 <body>
-<div style="background-color: pink; opacity: 90%; margin: auto;" class="col-sm-4">
+<div style="background-color: pink;  margin: auto; border-radius: 10px;" class="col-sm-4">
 <table id="customers">
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif ; text-shadow: 3px 2px red; color: white;font-size: 30px;">Name of bride</label>
+        <label style="font-family:'Times New Roman', Times, serif ; text-shadow: 3px 2px red; color: white;font-size: 20px;">Name of bride</label>
     </td>
     <th>
-        <input style="line-height: 50px;
-                                                  background: #fafafa;
-                                                  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   -webkit-border-radius: 5px;
-                                                  -moz-border-radius: 5px;
-                                                   border-radius: 5px;
-                                                   padding: 0 20px;
-                                                   font-size: 18px;
-                                                   color: #666;
-                                                  -webkit-transition: all 0.4s ease;
-                                                  -o-transition: all 0.4s ease;
-                                                  -moz-transition: all 0.4s ease;
-                                                  transition: all 0.4s ease;" type="text" name="name_of_bride" id="bridename">
+        <input class="form-control" type="text" name="name_of_bride" id="bridename">
     </th>
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white; ">Name of bridegroom</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white; ">Name of bridegroom</label>
     </td>
     <th>
-        <input style="line-height: 50px;
-                                                  background: #fafafa;
-                                                  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   -webkit-border-radius: 5px;
-                                                  -moz-border-radius: 5px;
-                                                   border-radius: 5px;
-                                                   padding: 0 20px;
-                                                   font-size: 18px;
-                                                   color: #666;
-                                                  -webkit-transition: all 0.4s ease;
-                                                  -o-transition: all 0.4s ease;
-                                                  -moz-transition: all 0.4s ease;
-                                                  transition: all 0.4s ease;" type="text" name="last_name" id="groomname">
+        <input class="form-control" type="text" name="last_name" id="groomname">
     </th>
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white;">Select your wedding date</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white;">Select your wedding date</label>
     </td>
     <th>
-        <input style="line-height: 50px;
-                                                  background: #fafafa;
-                                                  -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                  -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-                                                   -webkit-border-radius: 5px;
-                                                  -moz-border-radius: 5px;
-                                                   border-radius: 5px;
-                                                   padding: 0 20px;
-                                                   font-size: 18px;
-                                                   color: #666;
-                                                  -webkit-transition: all 0.4s ease;
-                                                  -o-transition: all 0.4s ease;
-                                                  -moz-transition: all 0.4s ease;
-                                                  transition: all 0.4s ease" type="date" id="date" name="trip-start" min="2019-10-01">
+        <input class="form-control" type="date" id="date" name="trip-start" min="2019-10-01">
     </th>
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white;">Phone Number</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white;">Phone Number</label>
     </td>
     <th>
-        <input style="line-height: 50px;
-                                                  background: #fafafa;
-                                                  border-radius: 5px;
-                                                    padding: 0 20px;
-                                                   font-size: 18px;
-                                                   color: #666;" type="number" name="phone" id="phone">   
+        <input class="form-control" type="number" name="phone" id="phone">   
     </th>
     </tr>
     <tr>
     <td>
     </td>
     <th>
-        <button style="background-color: red;
-                       border: none;
-                       color: white;
-                       padding: 15px 32px;
-                       text-align: center;
-                       display: inline-block;
-                       font-size: 16px;
-                       cursor: pointer;"  type="button" onclick="register()" id="button">Submit</button>
+        <button class="form-control bg-danger text-white"  type="button" onclick="register()" id="button">Submit</button>
     </th>
     </tr>
 </table>
