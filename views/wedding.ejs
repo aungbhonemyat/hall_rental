@@ -8,22 +8,15 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="background-color: grey;">
-                <div style="margin-top: 1px; border-radius: 10px; width: 100%; background-color: lightgrey;">
-                    
-                    <h2  style="border: 2px white;
-                                font-family:'Times New Roman', Times, serif ;
-                                font-size: 40px; 
-                                margin: auto;  
-                                padding: 10px;
-                                text-align: center;"class="title">Wedding form</h2><br><br>
-                    
-                        <div class="row">
-                            <div class="col-2">
-                                <div>
-                                    <label style="font-family:'Times New Roman', Times, serif ; font-size: 30px;">Name of bride</label> 
-                                    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input style="line-height: 50px;
+
+    <div style="background-color: pink; opacity: 80%">
+<table id="customers">
+    <tr>
+    <td>
+        <label style="font-family:'Times New Roman', Times, serif ; text-shadow: 3px 2px red; color: white;font-size: 30px;">Name of bride</label>
+    </td>
+    <th>
+        <input style="line-height: 50px;
                                                   background: #fafafa;
                                                   -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
                                                   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -38,14 +31,14 @@
                                                   -o-transition: all 0.4s ease;
                                                   -moz-transition: all 0.4s ease;
                                                   transition: all 0.4s ease;" type="text" name="name_of_bride" id="bridename">
-                                                  <br><br>
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div>
-                                    <label style="font-family:'Times New Roman', Times, serif; font-size: 30px;">Name of bridegoom</label>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <input style="line-height: 50px;
+    </th>
+    </tr>
+    <tr>
+    <td>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white; ">Name of bridegroom</label>
+    </td>
+    <th>
+        <input style="line-height: 50px;
                                                   background: #fafafa;
                                                   -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
                                                   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -59,17 +52,15 @@
                                                   -webkit-transition: all 0.4s ease;
                                                   -o-transition: all 0.4s ease;
                                                   -moz-transition: all 0.4s ease;
-                                                  transition: all 0.4s ease;" type="text" name="last_name" id="groomname"><br><br>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <div>
-                                    <label style="font-family:'Times New Roman', Times, serif; font-size: 30px;">Select your wedding date</label>
-                                    <br><br>
-                                    <div>
-                                        <input style="line-height: 50px;
+                                                  transition: all 0.4s ease;" type="text" name="last_name" id="groomname">
+    </th>
+    </tr>
+    <tr>
+    <td>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white;">Select your wedding date</label>
+    </td>
+    <th>
+        <input style="line-height: 50px;
                                                   background: #fafafa;
                                                   -webkit-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
                                                   -moz-box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
@@ -83,31 +74,38 @@
                                                   -webkit-transition: all 0.4s ease;
                                                   -o-transition: all 0.4s ease;
                                                   -moz-transition: all 0.4s ease;
-                                                  transition: all 0.4s ease" type="date" id="date" name="trip-start" min="2019-10-01"><br><br>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="row">
-                            
-                            <div class="col-2">
-                                <div>
-                                    <label style="font-family:'Times New Roman', Times, serif; font-size: 30px;">Phone Number</label>
-                                    <input style="line-height: 50px;
+                                                  transition: all 0.4s ease" type="date" id="date" name="trip-start" min="2019-10-01">
+    </th>
+    </tr>
+    <tr>
+    <td>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 30px; text-shadow: 3px 2px red; color: white;">Phone Number</label>
+    </td>
+    <th>
+        <input style="line-height: 50px;
                                                   background: #fafafa;
                                                   border-radius: 5px;
                                                     padding: 0 20px;
                                                    font-size: 18px;
-                                                   color: #666;" type="number" name="phone" id="phone">
-                                </div>
-                            </div>
-                        </div>
-                        
-                     <button type="button" onclick="register()" id="button">Submit</button>
-                    
-                </div>
-    </div>
+                                                   color: #666;" type="number" name="phone" id="phone">   
+    </th>
+    </tr>
+    <tr>
+    <td>
+    </td>
+    <th>
+        <button style="background-color: red;
+                       border: none;
+                       color: white;
+                       padding: 15px 32px;
+                       text-align: center;
+                       display: inline-block;
+                       font-size: 16px;
+                       cursor: pointer;"  type="button" onclick="register()" id="button">Submit</button>
+    </th>
+    </tr>
+</table>
+</div>
 
     
 
