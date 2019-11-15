@@ -152,7 +152,7 @@ app.post('/webhook', (req, res) => {
       console.log('error', error);  
     });
       }
-    })
+    }).catch(function(err){console.log(err)})
       }
     
  
