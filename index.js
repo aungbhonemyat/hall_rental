@@ -255,7 +255,7 @@ requestify.post(sendmessageurl,
                 "type": "web_url",
                 "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
                 "title":"Create",
-                "webview_height_ratio":"full"
+                "webview_height_ratio":"tall"
               }              
             ]      
           },{
