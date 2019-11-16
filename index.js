@@ -242,6 +242,7 @@ app.post('/webhook', (req, res) => {
       }
       if(eventType == 'Seminar'){
         var name = relt.data().eventDetails.seminarName
+        var guest = relt.data().eventDetails.guests
         var date = relt.data().eventDetails.date
       
       requestify.post(sendmessageurl,
@@ -250,13 +251,15 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is seminar of ${name} on ${date}`
+        "text":`Your speaker is ${name} and total guest will be ${guests} on ${date}`
       }
     }).then(function(success){
       console.log('successful template');
     }).catch(function(error){
       console.log('error', error);  
     });
+      }
+    })
   }
 })
   }
