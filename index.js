@@ -251,7 +251,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your speaker is ${name} and total guest will be ${guests} on ${date}`
+        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}`
       }
     }).then(function(success){
       console.log('successful template');
