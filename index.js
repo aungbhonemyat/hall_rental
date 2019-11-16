@@ -211,7 +211,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":'Your invitation code is',bride,groom,data
+        "text":"Your invitation code is"
       }
     }).then(function(success){
       console.log('successful template');
