@@ -137,7 +137,7 @@ function register() {
       if (user) {
         var db = firebase.firestore();
         var b_name = document.getElementById("bridename").value
-        var g_name = document.getElementsByName("aa").value
+        var g_name = document.querySelector('input[name="aa"]:checked').value
         var date = document.getElementById("date").value
         var phone = document.getElementById("phone").value
         document.getElementById("button").innerHTML = 'Processing..'
