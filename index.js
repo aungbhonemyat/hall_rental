@@ -110,16 +110,18 @@ app.post('/webhook', (req, res) => {
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
-	  	  
-	  var senderID= webhook_event.sender.id;
-	  if(webhook_event.postback){
-		var userButton=webhook_event.postback.payload;
-		console.log('reply',userButton);
-		}
-	if(webhook_event.message){
+        
+    var senderID= webhook_event.sender.id;
+    if(webhook_event.postback){
+    var userButton=webhook_event.postback.payload;
+    console.log('reply',userButton);
+    }
+  if(webhook_event.message){
     if(webhook_event.message.text){
-		var userComment=webhook_event.message.text;
-		console.log('userComment',userComment);
+    var userComment=webhook_event.message.text;
+    console.log('userComment',userComment);
+  }
+}
 
     //start
     //Welcome Message
@@ -166,13 +168,13 @@ app.post('/webhook', (req, res) => {
  
 
     //end
-		}
-	if(webhook_event.message.attachments){
-		var userImage=webhook_event.message.attachments;
-		console.log('userPhoto',userImage);
-		}
-  }
-		
+    
+  if(webhook_event.message.attachments){
+    var userImage=webhook_event.message.attachments;
+    console.log('userPhoto',userImage);
+    }
+  
+    
   
 
 //Guest Flow
@@ -299,25 +301,7 @@ requestify.post(sendmessageurl,
             
 
 
-    /*requestify.get(`https://graph.facebook.com/`+senderID+`?fields=first_name,last_name,profile_pic&access_token=`+PageAccessToken).then(function(userProfile){
-      var randomNumber = Math.floor((Math.random() * 1000000000) + 1);
-      var hostId = senderID.substring(1,4)
-  var eventOTP = 'Eve'+randomNumber+hostId
-  console.log(eventOTP)
-  db.collection('Events').doc(senderID).set({
-    hostname: userProfile.first_name+' '+userProfile.last_name,
-    eventName: userComment,
-    eventId: `sample`,
-    eventOTP: eventOTP,
-    hostID: senderID
-  }).then(function(relt){
-    console.log(`ok`)
-  }).catch(function(error){
-    console.log(error)
-  })
-    })*/
-      
-    //carousel here
+    
   
 
 
