@@ -231,9 +231,9 @@ app.post('/webhook', (req, res) => {
       var eventType = relt.data().eventType
       console.log('ur event is:', eventType)
       if (eventType == 'Party'){
-        var bride = relt.data().eventDetails.bride
-        var groom = relt.data().eventDetails.groom
+        var partyType = relt.data().eventDetails.partyType
         var date = relt.data().eventDetails.date
+        var partyGuests = relt.data().eventDetails.partyGuests
       
       requestify.post(sendmessageurl,
       { 
@@ -241,7 +241,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is party of ${bride} and ${groom} on ${date}`
+        "text":`Your event is party of ${partyType} and ${date} on ${partyGuests}`
       }
     }).then(function(success){
       console.log('successful template');
