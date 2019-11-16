@@ -208,7 +208,7 @@ app.post('/webhook', (req, res) => {
       requestify.post(sendmessageurl,
       { 
         "recipient":{
-        "id":senderID
+        "id":eventOTP
       },
         "message":{
         "text":"Your invitation code is"
