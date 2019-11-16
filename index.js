@@ -318,7 +318,7 @@ requestify.post(sendmessageurl,
     })*/
       
     //carousel here
-  }
+  
 
 
 
