@@ -137,7 +137,7 @@ function register() {
       if (user) {
         var db = firebase.firestore();
         var b_name = document.getElementById("bridename").value
-        var g_name = document.getElementsByName("fname").value
+        var g_name = document.getElementsByName("aa").value
         var date = document.getElementById("date").value
         var phone = document.getElementById("phone").value
         document.getElementById("button").innerHTML = 'Processing..'
@@ -148,6 +148,7 @@ function register() {
         var hostId = senderID.substring(1,4)
         var eventId = 'Evepty'+randomNumber+hostId
         var eventOTP = btoa(randomNumber+hostId)
+        console.log(g_name)
         db.collection('Events').doc(eventId).set({
     hostname: userProfile.first_name+' '+userProfile.last_name,
     eventType: 'Party',
