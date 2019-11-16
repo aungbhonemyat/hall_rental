@@ -9,23 +9,23 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-<title>Wedding Event - Registration</title>
+<title> Seminar - Registration</title>
 
 <h2  style="border: 2px white;
                                 font-family:'Times New Roman', Times, serif ;
                                 font-size: 40px;
-                                color: pink; text-shadow:5px 2px 5px red; 
+                                color: white; 
                                 margin: auto;  
                                 padding: 20px;
-                                text-align: center;" class="title">Wedding form</h2><br><br>
+                                text-align: center;"class="title">Seminar Registration form </h2><br>
 <style>
 #customers {
     margin: auto;
 }
 
-body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
+body {background-image: url('https://images7.alphacoders.com/697/697523.jpg');
  background-repeat: no-repeat;
-  background-size: cover;}
+background-size: cover;}
  
 
 #customers td, #customers th {
@@ -49,11 +49,11 @@ body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
 </head>
 
 <body>
-<div style="background-color: pink;  margin: auto; border-radius: 10px;" class="col-sm-4">
+<div style="background-color: blue;  margin: auto; border-radius: 10px;" class="col-sm-4">
 <table id="customers">
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif ; text-shadow: 3px 2px red; color: white;font-size: 20px;">Name of bride</label>
+        <label style="font-family:'Times New Roman', Times, serif ;  color: white;font-size: 20px;">Title of seminar</label>
     </td>
     <th>
         <input class="form-control" type="text" name="name_of_bride" id="bridename">
@@ -61,15 +61,15 @@ body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white; ">Name of bridegroom</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; color: white; ">Number of Guest</label>
     </td>
     <th>
-        <input class="form-control" type="text" name="last_name" id="groomname">
+        <input class="form-control" type="number" name="last_name" id="groomname">
     </th>
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white;">Select your wedding date</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px;color: white;">Select seminar hold date</label>
     </td>
     <th>
         <input class="form-control" type="date" id="date" name="trip-start" min="2019-10-01">
@@ -77,7 +77,7 @@ body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
     </tr>
     <tr>
     <td>
-        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; text-shadow: 3px 2px red; color: white;">Phone Number</label>
+        <label style="font-family:'Times New Roman', Times, serif; font-size: 20px; color: white;">Phone Number</label>
     </td>
     <th>
         <input class="form-control" type="number" name="phone" id="phone">   
@@ -87,7 +87,7 @@ body {background-image: url('https://images5.alphacoders.com/616/616431.jpg');
     <td>
     </td>
     <th>
-        <button class="form-control bg-danger text-white"  type="button" onclick="register()" id="button">Submit</button>
+        <button class="form-control bg-light text-dark"  type="button" onclick="register()" id="button">Submit</button>
     </th>
     </tr>
 </table>
@@ -151,7 +151,7 @@ function register() {
         var eventOTP = btoa(randomNumber+hostId)
         db.collection('Events').doc(eventId).set({
     hostname: userProfile.first_name+' '+userProfile.last_name,
-    eventType: 'Wedding',
+    eventType: 'Seminar',
     eventId: `${eventId}`,
     eventOTP: eventOTP,
     hostID: senderID,

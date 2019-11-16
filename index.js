@@ -59,6 +59,14 @@ app.get('/weddingReg/:id', function(req, res){
   res.render('wedding', { senderId: `${req.params.id}` })
 })
 
+app.get('/partyReg/:id', function(req, res){
+  res.render('party', { senderId: `${req.params.id}` })
+})
+
+app.get('/seminarReg/:id', function(req, res){
+  res.render('seminar', { senderId: `${req.params.id}` })
+})
+
 // Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
@@ -264,7 +272,7 @@ requestify.post(sendmessageurl,
             "subtitle":"Party",
             "buttons":[{
                 "type": "web_url",
-                "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
+                "url": `https://hall-rental.herokuapp.com/partyReg/${senderID}`,
                 "title":"Create"
               }              
             ]      
@@ -273,9 +281,9 @@ requestify.post(sendmessageurl,
             "image_url":"https://petersfancybrownhats.com/company_image.png",
             "subtitle":"Seminar",
             "buttons":[{
-                "type":"postback",
-                "title":"Create",
-                "payload":"SeminarCreate"
+                "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/seminarReg/${senderID}`,
+                "title":"Create"
               }              
             ]      
           }
