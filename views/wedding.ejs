@@ -148,7 +148,7 @@ function register() {
         var senderID = '<%= senderId %>'
         var hostId = senderID.substring(1,4)
         var eventId = 'Evewdg'+randomNumber+hostId
-        var eventOTP = btoa(randomNumber+hostId)
+        var eventOTP = 'Eve'+btoa(randomNumber+hostId)
         db.collection('Events').doc(eventId).set({
     hostname: userProfile.first_name+' '+userProfile.last_name,
     eventType: 'Wedding',

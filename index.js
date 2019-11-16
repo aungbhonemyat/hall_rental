@@ -199,7 +199,27 @@ app.post('/webhook', (req, res) => {
         console.log('no event')
   }else{
     result.forEach(function(relt){
-      console.log('ur event is:', relt.data().eventName)
+      var eventType = relt.data().eventType
+      console.log('ur event is:', eventType)
+      if (eventType == 'Wedding'){
+        var bride = relt.data().eventDetails.bride
+        var groom = relt.data().eventDetails.groom
+        var date = relt.data().eventDetails.date
+      requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+      },
+        "message":{
+        "text":"Your invitation code is",bride,groom,data
+      }
+    }).then(function(success){
+      console.log('successful template');
+    }).catch(function(error){
+      console.log('error', error);  
+    });
+      }
+
     })
   }
 })
