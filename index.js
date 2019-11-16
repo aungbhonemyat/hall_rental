@@ -220,40 +220,6 @@ app.post('/webhook', (req, res) => {
       console.log('error', error);  
     });
 
-    if(userComment){
-    if(userComment.includes('Eve')){
-    console.log('user OTP is:', userComment)
-    db.collection('Events').where('eventOTP', '==', userComment).get().then(function(result){
-      if(result.empty){
-        console.log('no event')
-  }else{
-    result.forEach(function(relt){
-      var eventType = relt.data().eventType
-      console.log('ur event is:', eventType)
-      if (eventType == 'Party'){
-        var partyType = relt.data().eventDetails.partyType
-        var date = relt.data().eventDetails.date
-        var partyGuests = relt.data().eventDetails.partyGuests
-      
-      requestify.post(sendmessageurl,
-      { 
-        "recipient":{
-        "id":senderID
-      },
-        "message":{
-        "text":`Your event is party of ${partyType} and ${date} on ${partyGuests}`
-      }
-    }).then(function(success){
-      console.log('successful template');
-    }).catch(function(error){
-      console.log('error', error);  
-    });
-
-
-
-
-
-
       }
     })
   }
