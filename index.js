@@ -255,7 +255,7 @@ requestify.post(sendmessageurl,
   "template_type":"generic",
   "elements":[{
             "title":"Wedding",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"'https://images5.alphacoders.com/616/616431.jpg'",
             "subtitle":"Wedding",
             "buttons":[{
                 "type": "web_url",
@@ -266,7 +266,7 @@ requestify.post(sendmessageurl,
             ]      
           },{
             "title":"Party",
-            "image_url":"https://images5.alphacoders.com/616/616431.jpg",
+            "image_url":"https://images2.alphacoders.com/787/787147.jpg",
             "subtitle":"Party",
             "buttons":[{
                 "type": "web_url",
@@ -277,7 +277,7 @@ requestify.post(sendmessageurl,
             ]      
           },{
             "title":"Seminar",
-            "image_url":"https://petersfancybrownhats.com/company_image.png",
+            "image_url":"https://images7.alphacoders.com/697/697523.jpg",
             "subtitle":"Seminar",
             "buttons":[{
                 "type": "web_url",
