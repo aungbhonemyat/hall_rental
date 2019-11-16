@@ -255,7 +255,7 @@ requestify.post(sendmessageurl,
   "template_type":"generic",
   "elements":[{
             "title":"Wedding",
-            "image_url":"'https://images5.alphacoders.com/616/616431.jpg'",
+            "image_url":"https://images5.alphacoders.com/616/616431.jpg",
             "subtitle":"Wedding",
             "buttons":[{
                 "type": "web_url",
