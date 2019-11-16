@@ -205,21 +205,22 @@ app.post('/webhook', (req, res) => {
         var bride = relt.data().eventDetails.bride
         var groom = relt.data().eventDetails.groom
         var date = relt.data().eventDetails.date
+      
       requestify.post(sendmessageurl,
       { 
         "recipient":{
-        "id":eventOTP
+        "id":senderID
       },
         "message":{
-        "text":"Your invitation code is"
+        "text":`Your event is wedding of ${bride} and ${groom} on ${date}`
       }
     }).then(function(success){
       console.log('successful template');
     }).catch(function(error){
       console.log('error', error);  
     });
-      }
 
+      }
     })
   }
 })
