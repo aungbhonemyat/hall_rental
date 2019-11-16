@@ -221,7 +221,42 @@ app.post('/webhook', (req, res) => {
     });
 
       }
-    })
+      if(eventType == 'Party'){
+        var type = relt.data().eventDetails.partyType
+        var guest = relt.data().eventDetails.partyGuests
+        var date = relt.data().eventDetails.date
+      
+      requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+      },
+        "message":{
+        "text":`Your event is ${type} party for ${guest} on ${date}`
+      }
+    }).then(function(success){
+      console.log('successful template');
+    }).catch(function(error){
+      console.log('error', error);  
+    });
+      }
+      if(eventType == 'Seminar'){
+        var name = relt.data().eventDetails.seminarName
+        var date = relt.data().eventDetails.date
+      
+      requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+      },
+        "message":{
+        "text":`Your event is seminar of ${name} on ${date}`
+      }
+    }).then(function(success){
+      console.log('successful template');
+    }).catch(function(error){
+      console.log('error', error);  
+    });
   }
 })
   }
