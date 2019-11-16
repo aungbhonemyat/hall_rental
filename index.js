@@ -169,11 +169,6 @@ app.post('/webhook', (req, res) => {
  
 
     //end
-    
-  if(webhook_event.message.attachments){
-    var userImage=webhook_event.message.attachments;
-    console.log('userPhoto',userImage);
-    }
   
     
   
