@@ -273,7 +273,8 @@ requestify.post(sendmessageurl,
             "buttons":[{
                 "type": "web_url",
                 "url": `https://hall-rental.herokuapp.com/partyReg/${senderID}`,
-                "title":"Create"
+                "title":"Create",
+                "webview_height_ratio":"tall"
               }              
             ]      
           },{
@@ -283,7 +284,8 @@ requestify.post(sendmessageurl,
             "buttons":[{
                 "type": "web_url",
                 "url": `https://hall-rental.herokuapp.com/seminarReg/${senderID}`,
-                "title":"Create"
+                "title":"Create",
+                "webview_height_ratio":"tall"
               }              
             ]      
           }
@@ -292,27 +294,7 @@ requestify.post(sendmessageurl,
       }
     }
   })}
-          if(userButton=='WeddingCreate'){
-            requestify.post(sendmessageurl,
-            {
-              "recipient":{
-                "id":senderID
-            },
-          "message":{
-        "attachment":{
-          "type":"template",
-            "payload": {
-            "template_type":"button",
-            "text":"Do you wish to Create or Manage event?",
-            "buttons":[{
-              "type":"postback",
-              "title":"Create",
-              "payload":"createEvent"
-            }]
-          }
-        }
-      }
-    })
+         
   
             
 
