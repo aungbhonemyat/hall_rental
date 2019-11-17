@@ -232,7 +232,21 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is ${type} party for ${guest} on ${date}`
+        "text":`Your event is ${type} party for ${guest} on ${date}`,
+        "text":"How did you come to the Party? Car or Motorbike? ",
+        "quick_repies":[
+        {
+          "content_type":"text",
+          "title":"Car",
+          "payload":"car"
+        },
+        {
+          "content":"text",
+          "title":"Motorbike",
+          "payload":"motorbike"
+        }
+        ]
+
       }
     }).then(function(success){
       console.log('successful template');
