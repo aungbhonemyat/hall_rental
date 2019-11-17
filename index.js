@@ -278,7 +278,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}`,
+        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}`
          "text":"How did you come to the Party? Car or Motorbike? ",
         "quick_replies":[
         {
