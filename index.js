@@ -212,7 +212,20 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is wedding of ${bride} and ${groom} on ${date}`
+        "text":`Your event is wedding of ${bride} and ${groom} on ${date}`,
+         "text":"How did you come to the Party? Car or Motorbike? ",
+        "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Car",
+          "payload":"car"
+        },
+        {
+          "content_type":"text",
+          "title":"Motorbike",
+          "payload":"motorbike"
+        }
+        ]
       }
     }).then(function(success){
       console.log('successful template');
@@ -265,7 +278,20 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}`
+        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}`,
+         "text":"How did you come to the Party? Car or Motorbike? ",
+        "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Car",
+          "payload":"car"
+        },
+        {
+          "content_type":"text",
+          "title":"Motorbike",
+          "payload":"motorbike"
+        }
+        ]
       }
     }).then(function(success){
       console.log('successful template');
