@@ -234,7 +234,7 @@ app.post('/webhook', (req, res) => {
         "message":{
         "text":`Your event is ${type} party for ${guest} on ${date}`,
         "text":"How did you come to the Party? Car or Motorbike? ",
-        "quick_repies":[
+        "quick_replies":[
         {
           "content_type":"text",
           "title":"Car",
