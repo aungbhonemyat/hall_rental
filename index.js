@@ -241,7 +241,7 @@ app.post('/webhook', (req, res) => {
           "payload":"car"
         },
         {
-          "content":"text",
+          "content_type":"text",
           "title":"Motorbike",
           "payload":"motorbike"
         }
