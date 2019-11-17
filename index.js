@@ -212,7 +212,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How did you come to the Wedding? Car or Motorbike? `,
+        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Wedding? Car or Motorbike? `,
         
         "quick_replies":[
         {
@@ -245,7 +245,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is ${type} party for ${guest} on ${date}.How did you come to the Party? Car or Motorbike?`,
+        "text":`Your event is ${type} party for ${guest} on ${date}.How do you come to the Party? Car or Motorbike?`,
 
         "quick_replies":[
         {
@@ -278,7 +278,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}.How did you come to the Seminar? Car or Motorbike?`,
+        "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}.How do you come to the Seminar? Car or Motorbike?`,
         
         "quick_replies":[
         {
