@@ -305,11 +305,23 @@ app.post('/webhook', (req, res) => {
   }
 }
 
-
+if (userComment == "Motorbike"){
+  var payload = webhook_event.message.quick_replies.payload.split(' ')
+  var eventId = payload[1]
+  db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
+    guestId: senderID,
+    guestVehicle: 'Motorbike'
+  }).then(success => {console.log('db success')})
+}
 
 
 if (userComment == "Car"){
-  db.collection('Guest').doc('')
+  var payload = webhook_event.message.quick_replies.payload.split(' ')
+  var eventId = payload[1]
+  db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
+    guestId: senderID,
+    guestVehicle: 'Car'
+  }).then(success => {console.log('db success')})
 }
 //Host Flow
 
