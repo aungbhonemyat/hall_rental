@@ -308,11 +308,7 @@ app.post('/webhook', (req, res) => {
 
 
 
-if (userComment == "car"){
-  db.collection('Guest').where('type','==','Car').get().then(ref=>{
-    console.log('senderID',ref.id)
-  })
-}
+
 //Host Flow
 
   if(userButton == 'Host' || userComment == 'Host'){ 
