@@ -114,12 +114,12 @@ app.post('/webhook', (req, res) => {
     var senderID= webhook_event.sender.id;
     if(webhook_event.postback){
     var userInput=webhook_event.postback.payload;
-    console.log('reply',userInput);
+    console.log('reply', userInput);
     }
   if(webhook_event.message){
     if(webhook_event.message.text){
     var userInput=webhook_event.message.text;
-    console.log('userInput',userInput);
+    console.log('userInput', userInput);
   }
 }
 
@@ -507,21 +507,21 @@ if (userInput == 'Buy'){
   })
 }
 
-if (genric.payload=='item1'){
+if (userInput== 'item1'){
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
   })  
 }
 
-if (genric.payload=='item2'){
+if (userInput == 'item2'){
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
   })  
 }
 
-if (genric.payload=='item3'){
+if (userInput == 'item3'){
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
