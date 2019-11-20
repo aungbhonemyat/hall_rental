@@ -469,9 +469,9 @@ if (userInput == 'Buy'){
             "payload": {
   "template_type":"generic",
   "elements":[{
-            "title":"Wedding",
+            "title":"item1",
             "image_url":"https://images5.alphacoders.com/616/616431.jpg",
-            "subtitle":"Wedding",
+            "subtitle":"price 10000 MMK",
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
@@ -479,9 +479,9 @@ if (userInput == 'Buy'){
               }                    
             ]      
           },{
-            "title":"Party",
+            "title":"item2",
             "image_url":"https://images2.alphacoders.com/787/787147.jpg",
-            "subtitle":"Party",
+            "subtitle":"price 15000 MMK",
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
@@ -489,9 +489,9 @@ if (userInput == 'Buy'){
               }                     
             ]      
           },{
-            "title":"Seminar",
+            "title":"item3",
             "image_url":"https://images7.alphacoders.com/697/697523.jpg",
-            "subtitle":"Seminar",
+            "subtitle":"price 10000 MMK",
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
