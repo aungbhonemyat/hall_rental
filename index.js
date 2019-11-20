@@ -113,20 +113,20 @@ app.post('/webhook', (req, res) => {
         
     var senderID= webhook_event.sender.id;
     if(webhook_event.postback){
-    var userButton=webhook_event.postback.payload;
-    console.log('reply',userButton);
+    var userInput=webhook_event.postback.payload;
+    console.log('reply',userInput);
     }
   if(webhook_event.message){
     if(webhook_event.message.text){
-    var userComment=webhook_event.message.text;
-    console.log('userComment',userComment);
+    var userInput=webhook_event.message.text;
+    console.log('userInput',userInput);
   }
 }
 
     //start
     //Welcome Message
 
-  if(userButton == 'Hi' || userComment == 'Hi' || userComment == 'httpsi'){ 
+  if(userInput == 'Hi' || userInput == 'Hi' || userInput == 'httpsi'){ 
     db.collection('Worker').where('ID', '==', `${senderID}`).get().then(function(result){
       if(result.empty){     
           console.log('empty relt')
@@ -175,7 +175,7 @@ app.post('/webhook', (req, res) => {
 
 //Guest Flow
 
-  if(userButton == 'Guest' || userComment == 'Guest'){ 
+  if(userInput == 'Guest' || userInput == 'Guest'){ 
     requestify.post(sendmessageurl,
       { 
         "recipient":{
@@ -191,10 +191,10 @@ app.post('/webhook', (req, res) => {
     });
   } 
 
-  if(userComment){
-    if(userComment.includes('Eve')){
-    console.log('user OTP is:', userComment)
-    db.collection('Events').where('eventOTP', '==', userComment).get().then(function(result){
+  if(userInput){
+    if(userInput.includes('Eve')){
+    console.log('user OTP is:', userInput)
+    db.collection('Events').where('eventOTP', '==', userInput).get().then(function(result){
       if(result.empty){
         console.log('no event')
   }else{
@@ -303,7 +303,7 @@ app.post('/webhook', (req, res) => {
   }
 })
   }
-  if (userComment == "Motorbike"){
+  if (userInput == "Motorbike"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
   db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
@@ -313,7 +313,7 @@ app.post('/webhook', (req, res) => {
 }
 
 
-if (userComment == "Car"){
+if (userInput == "Car"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
   db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
@@ -326,7 +326,7 @@ if (userComment == "Car"){
 
 //Host Flow
 
-  if(userButton == 'Host' || userComment == 'Host'){ 
+  if(userInput == 'Host' || userInput == 'Host'){ 
     requestify.post(sendmessageurl,
       { 
         "recipient":{
@@ -356,7 +356,7 @@ if (userComment == "Car"){
 
 // create event
 
-  if(userButton == 'createEvent'){
+  if(userInput == 'createEvent'){
 requestify.post(sendmessageurl,
       { 
         "recipient":{
