@@ -306,7 +306,7 @@ app.post('/webhook', (req, res) => {
   if (userInput == "Motorbike"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
-  db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
+  db.collection('Guest').doc(`${eventId}`).collection('guestList').doc(`${senderID}`).set({
     guestId: senderID,
     guestVehicle: 'Motorbike'
   }).then(success => {console.log('db success')})
@@ -316,7 +316,7 @@ app.post('/webhook', (req, res) => {
 if (userInput == "Car"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
-  db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
+  db.collection('Guest').doc(`${eventId}`).collection('guestList').doc(`${senderID}`).set({
     guestId: senderID,
     guestVehicle: 'Car'
   }).then(success => {console.log('db success')})
