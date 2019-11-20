@@ -473,33 +473,46 @@ if (userInput == 'Buy'){
             "image_url":"https://images5.alphacoders.com/616/616431.jpg",
             "subtitle":"Wedding",
             "buttons":[{
-                "type": "web_url",
-                "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
-                "title":"Create",
-                "webview_height_ratio":"tall"
-              }              
+                "type": "postback",
+                "title":"Buy",
+                "payload":"buy"
+              },
+              {
+                "type": "postback",
+                "title":"Cancel",
+                "payload":"cancel"
+              }                           
             ]      
           },{
             "title":"Party",
             "image_url":"https://images2.alphacoders.com/787/787147.jpg",
             "subtitle":"Party",
             "buttons":[{
-                "type": "web_url",
-                "url": `https://hall-rental.herokuapp.com/partyReg/${senderID}`,
-                "title":"Create",
-                "webview_height_ratio":"tall"
-              }              
+                "type": "postback",
+                "title":"Buy",
+                "payload":"buy"
+              },
+              {
+                "type": "postback",
+                "title":"Cancel",
+                "payload":"cancel"
+              }                          
             ]      
           },{
             "title":"Seminar",
             "image_url":"https://images7.alphacoders.com/697/697523.jpg",
             "subtitle":"Seminar",
             "buttons":[{
-                "type": "web_url",
-                "url": `https://hall-rental.herokuapp.com/seminarReg/${senderID}`,
-                "title":"Create",
-                "webview_height_ratio":"tall"
-              }              
+                "type": "postback",
+                "title":"Buy",
+                "payload":"buy"
+                
+              },
+              {
+                "type": "postback",
+                "title":"Cancel",
+                "payload":"cancel"
+              }                         
             ]      
           }
           ]
