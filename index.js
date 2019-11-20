@@ -126,7 +126,7 @@ app.post('/webhook', (req, res) => {
     //start
     //Welcome Message
 
-  if(userInput == 'Hi' || userInput == 'Hi' || userInput == 'httpsi'){ 
+  if(userInput == 'Hi' || userInput == 'Hi'){ 
     db.collection('Worker').where('ID', '==', `${senderID}`).get().then(function(result){
       if(result.empty){     
           console.log('empty relt')
@@ -191,7 +191,6 @@ app.post('/webhook', (req, res) => {
     });
   } 
 
-  if(userInput){
     if(userInput.includes('Eve')){
     console.log('user OTP is:', userInput)
     db.collection('Events').where('eventOTP', '==', userInput).get().then(function(result){
@@ -321,7 +320,7 @@ if (userInput == "Car"){
     guestVehicle: 'Car'
   }).then(success => {console.log('db success')})
 }
-}
+
 
 
 //Host Flow
