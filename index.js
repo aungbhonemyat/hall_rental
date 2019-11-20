@@ -475,7 +475,7 @@ if (userInput == 'Buy'){
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
-                "payload":"buy"
+                "payload":"item1"
               }                    
             ]      
           },{
@@ -485,7 +485,7 @@ if (userInput == 'Buy'){
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
-                "payload":"buy"
+                "payload":"item2"
               }                     
             ]      
           },{
@@ -495,7 +495,7 @@ if (userInput == 'Buy'){
             "buttons":[{
                 "type": "postback",
                 "title":"Buy",
-                "payload":"buy"
+                "payload":"item3"
                 
               }                    
             ]      
@@ -505,6 +505,27 @@ if (userInput == 'Buy'){
       }
     }
   })
+}
+
+if (genric.payload=='item1'){
+  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+    console.log('document ID:' , resp.id)
+
+  })  
+}
+
+if (genric.payload=='item2'){
+  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+    console.log('document ID:' , resp.id)
+
+  })  
+}
+
+if (genric.payload=='item3'){
+  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+    console.log('document ID:' , resp.id)
+
+  })  
 }
          
   
