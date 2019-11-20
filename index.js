@@ -456,6 +456,55 @@ requestify.post(sendmessageurl,
       }
     }
   })}
+
+if (userInput == 'Buy'){
+  requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+        },
+      "message":{
+        "attachment":{
+          "type":"template",
+            "payload": {
+  "template_type":"generic",
+  "elements":[{
+            "title":"Wedding",
+            "image_url":"https://images5.alphacoders.com/616/616431.jpg",
+            "subtitle":"Wedding",
+            "buttons":[{
+                "type": "web_url",
+                "title":"Create",
+                "webview_height_ratio":"tall"
+              }              
+            ]      
+          },{
+            "title":"Party",
+            "image_url":"https://images2.alphacoders.com/787/787147.jpg",
+            "subtitle":"Party",
+            "buttons":[{
+                "type": "web_url",
+                "title":"Create",
+                "webview_height_ratio":"tall"
+              }              
+            ]      
+          },{
+            "title":"Seminar",
+            "image_url":"https://images7.alphacoders.com/697/697523.jpg",
+            "subtitle":"Seminar",
+            "buttons":[{
+                "type": "web_url",
+                "title":"Create",
+                "webview_height_ratio":"tall"
+              }              
+            ]      
+          }
+          ]
+        }
+      }
+    }
+  })
+}
          
   
             
