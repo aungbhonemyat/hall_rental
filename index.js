@@ -111,9 +111,9 @@ app.post('/webhook', (req, res) => {
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
         
-    var senderID= webhook_event.sender.id;
+    var senderID = webhook_event.sender.id;
     if(webhook_event.postback){
-    var userInput=webhook_event.postback.payload;
+    var userInput = webhook_event.postback.payload;
     console.log('reply', userInput);
     }
   if(webhook_event.message){
@@ -506,8 +506,10 @@ if (userInput == 'Buy'){
     }
   })
 }
+  
 
-if (userInput== 'item1'){
+if (userInput == 'item1'){
+    const data = {gift:userInput};
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
@@ -515,6 +517,7 @@ if (userInput== 'item1'){
 }
 
 if (userInput == 'item2'){
+    const data = {gift:userInput};
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
@@ -522,6 +525,7 @@ if (userInput == 'item2'){
 }
 
 if (userInput == 'item3'){
+  const data = {gift:userInput};
   db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
