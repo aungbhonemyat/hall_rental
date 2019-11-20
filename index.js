@@ -158,7 +158,7 @@ app.post('/webhook', (req, res) => {
     }).catch(function(error){
       console.log('error', error);  
     });
-        } else {
+        } else {  
         //workerFlow
         console.log('worker flow')
         
@@ -476,12 +476,7 @@ if (userInput == 'Buy'){
                 "type": "postback",
                 "title":"Buy",
                 "payload":"buy"
-              },
-              {
-                "type": "postback",
-                "title":"Cancel",
-                "payload":"cancel"
-              }                           
+              }                    
             ]      
           },{
             "title":"Party",
@@ -491,12 +486,7 @@ if (userInput == 'Buy'){
                 "type": "postback",
                 "title":"Buy",
                 "payload":"buy"
-              },
-              {
-                "type": "postback",
-                "title":"Cancel",
-                "payload":"cancel"
-              }                          
+              }                     
             ]      
           },{
             "title":"Seminar",
@@ -507,12 +497,7 @@ if (userInput == 'Buy'){
                 "title":"Buy",
                 "payload":"buy"
                 
-              },
-              {
-                "type": "postback",
-                "title":"Cancel",
-                "payload":"cancel"
-              }                         
+              }                    
             ]      
           }
           ]
