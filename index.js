@@ -474,6 +474,7 @@ if (userInput == 'Buy'){
             "subtitle":"Wedding",
             "buttons":[{
                 "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/weddingReg/${senderID}`,
                 "title":"Create",
                 "webview_height_ratio":"tall"
               }              
@@ -484,6 +485,7 @@ if (userInput == 'Buy'){
             "subtitle":"Party",
             "buttons":[{
                 "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/partyReg/${senderID}`,
                 "title":"Create",
                 "webview_height_ratio":"tall"
               }              
@@ -494,6 +496,7 @@ if (userInput == 'Buy'){
             "subtitle":"Seminar",
             "buttons":[{
                 "type": "web_url",
+                "url": `https://hall-rental.herokuapp.com/seminarReg/${senderID}`,
                 "title":"Create",
                 "webview_height_ratio":"tall"
               }              
