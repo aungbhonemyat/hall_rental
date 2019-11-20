@@ -342,10 +342,6 @@ if (userComment == "Car"){
               "type":"postback",
               "title":"Create",
               "payload":"createEvent"
-            },{
-              "type":"postback",
-              "title":"Manage",
-              "payload":"manageEvent"
             }]
           }
         }
