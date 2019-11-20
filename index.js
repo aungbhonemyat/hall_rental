@@ -303,9 +303,7 @@ app.post('/webhook', (req, res) => {
   }
 })
   }
-}
-
-if (userComment == "Motorbike"){
+  if (userComment == "Motorbike"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
   db.collection('Guest').doc(`${eventId}`).col('guestList').doc(`${senderID}`).set({
@@ -323,6 +321,9 @@ if (userComment == "Car"){
     guestVehicle: 'Car'
   }).then(success => {console.log('db success')})
 }
+}
+
+
 //Host Flow
 
   if(userButton == 'Host' || userComment == 'Host'){ 
