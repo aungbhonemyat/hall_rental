@@ -308,7 +308,32 @@ app.post('/webhook', (req, res) => {
   db.collection('Guest').doc(`${eventId}`).collection('guestList').doc(`${senderID}`).set({
     guestId: senderID,
     guestVehicle: 'Motorbike'
-  }).then(success => {console.log('db success')})
+  }).then(success => {console.log('db success');
+    requestify.post(sendmessageurl,
+              { 
+                "recipient":{
+                "id":senderID
+                },
+              "message":{
+                "attachment":{
+                  "type":"template",
+                    "payload": {
+                    "template_type":"button",
+                    "text":"Do you want to buy Gifts from our service",
+                    "buttons":[{
+                      "type":"postback",
+                      "title":"Buy",
+                      "payload":"Buy"
+                    },{
+                      "type":"postback",
+                      "title":"Skip",
+                      "payload":"Skip"
+                    }]
+                  }
+                }
+              }
+            })
+            })
 }
 
 
