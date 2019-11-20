@@ -285,6 +285,25 @@ app.post('/webhook', (req, res) => {
           "title":"Car",
           "payload":"car "+relt.data().eventId
         },
+
+        if(userInput == 'Car' || userInput == 'Motorbike'){ 
+    requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+      },
+        "message":{
+        "text":"Please enter your OTP"
+      }
+    }).then(function(success){
+      console.log('successful template');
+    }).catch(function(error){
+      console.log('error', error);  
+    });
+  } 
+
+
+
         {
           "content_type":"text",
           "title":"Motorbike",
@@ -336,7 +355,7 @@ if (userInput == "Car"){
           "type":"template",
             "payload": {
             "template_type":"button",
-            "text":"Do you wish to Create or Manage event?",
+            "text":"Do you wish to Create event?",
             "buttons":[{
               "type":"postback",
               "title":"Create",
