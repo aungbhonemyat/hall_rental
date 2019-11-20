@@ -509,24 +509,28 @@ if (userInput == 'Buy'){
   
 
 if (userInput == 'item1'){
+  let bbb = db.collection('Guest').doc(` Evepty548113161632`).collection('guestList').doc(`${senderID}`);
+
     const data = {gift:userInput};
-  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+      bbb.set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
   })  
 }
 
 if (userInput == 'item2'){
-    const data = {gift:userInput};
-  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+  let bbb = db.collection('Guest').doc(`Evepty548113161632`).collection('guestList').doc(`${senderID}`);
+  const data = {gift:userInput};
+  bbb.set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
   })  
 }
 
 if (userInput == 'item3'){
+  let bbb = db.collection('Guest').doc(`Evepty548113161632`).collection('guestList').doc(`${senderID}`);
   const data = {gift:userInput};
-  db.collection(`Guest/Evepty548113161632/guestList/${senderID}`).set(data, {merge:true}).then(resp=>{
+    bbb.set(data, {merge:true}).then(resp=>{
     console.log('document ID:' , resp.id)
 
   })  
