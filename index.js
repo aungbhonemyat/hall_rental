@@ -502,12 +502,14 @@ if (userInput == 'Buy'){
           },{
             "title":"You can leave if you don't like it!!!",
             "subtitle":"Cick Cancel button",
-            "buttons":[{
-                "type": "postback",
-                "title":"Cancel",
-                "payload":"Skip"
+            "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Cancel",
+          "payload":"Skip"
+        }
                 
-              }                    
+                                
             ]      
           }
           ]
