@@ -500,15 +500,13 @@ if (userInput == 'Buy'){
               }                    
             ]      
           },{
-            
-            "quick_replies":[
-        {
-          "content_type":"You can leave if you don't like it!!!",
-          "title":"Cancel",
-          "payload":"Skip"
-        }
+           
+            "buttons":[{
+                "type": "postback",
+                "title":"Cancel",
+                "payload":"Skip"
                 
-                                
+              }                    
             ]      
           }
           ]
