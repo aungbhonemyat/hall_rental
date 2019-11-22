@@ -500,11 +500,10 @@ if (userInput == 'Buy'){
               }                    
             ]      
           },{
-            "title":"You can leave if you don't like it!!!",
-            "subtitle":"Cick Cancel button",
+            
             "quick_replies":[
         {
-          "content_type":"text",
+          "content_type":"You can leave if you don't like it!!!",
           "title":"Cancel",
           "payload":"Skip"
         }
