@@ -546,7 +546,7 @@ if (userInput == 'Skip'){
         },
          
           "message":{
-          "text":"Thanks for your join on the event!! "
+          "text":"Looking forward from the celebration event! "
 }
 
     
