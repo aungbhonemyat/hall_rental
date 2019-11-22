@@ -544,10 +544,10 @@ if (userInput == 'Skip'){
         "recipient":{
         "id":senderID
         },
-         "greeting": [{
-        "locale":"default",
-        "text":"Thanks for your join on our page!" 
-      }]
+         
+          "message":{
+          "text":"Thanks for your join on the event!! "
+}
 
     
   
