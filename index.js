@@ -211,7 +211,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Wedding? Car or Motorbike? `,
+        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Events? Car or Motorbike? `,
         
         "quick_replies":[
         {
