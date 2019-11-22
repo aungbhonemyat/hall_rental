@@ -39,7 +39,7 @@ requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_tok
         }],
       "greeting": [{
         "locale":"default",
-        "text":"Hello {{user_first_name}}! \nWe provide service!!" 
+        "text":"Hello {{user_first_name}}! \nPlease click on the Get started button to make the services joyful" 
       }]
 }).then(function(success){
   console.log('persistent_menu success');
