@@ -538,11 +538,21 @@ if (userInput == 'item3'){
          
   
             
-
+if (userInput == 'Skip'){
+  requestify.post(sendmessageurl,
+      { 
+        "recipient":{
+        "id":senderID
+        },
+         "greeting": [{
+        "locale":"default",
+        "text":"Thanks for your join on our page!" 
+      }]
 
     
   
-
+})
+}
 
 
   });
