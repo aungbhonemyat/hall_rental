@@ -8,7 +8,7 @@ requestify= require('requestify'),
   bodyParser = require('body-parser'),
   PageAccessToken='EAAFYRyzpU1IBAHNwh0nZCbZBxZBzgEuO7cjaxTCsGAJbeZCA2IZAgmiVb0c8AaVSJUJzrdwYTlekEFlcKgdH3hNRMsDJiPEtjney2BJK6vGH3u6HhoV3ZB2YK3ZB5vtLrza26ZBRJicn4ZC4RpRgq6t80p9Ng8fo8ZCmGZADLprfF2WcDZAZBTRp0nwb6',
   app = express().use(bodyParser.json());
-  const sendmessageurl = 'https://graph.facebook.com/v4.0/me/messages?access_token='+PageAccessToken
+  const sendmessageurl = 'https://graph.facebook.com/v5.0/me/messages?access_token='+PageAccessToken
   const admin = require('firebase-admin');
 
 const serviceAccount = ({
