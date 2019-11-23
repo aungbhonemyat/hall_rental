@@ -27,7 +27,7 @@ const serviceAccount = ({
  admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
  const db = admin.firestore();
   
-requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+PageAccessToken,
+/*requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_token='+PageAccessToken,
       { "get_started": {"payload": "Hi"},      
         "persistent_menu": [{
             "locale": "default",
@@ -42,9 +42,7 @@ requestify.post('https://graph.facebook.com/v2.6/me/messenger_profile?access_tok
         "locale":"default",
         "text":"Hello {{user_first_name}}! \nPlease click on the Get started button to make the services joyful" 
       }]
-}).then(function(success){
-  console.log('persistent_menu success');
-})
+})*/
 
 app.set('views', __dirname+'/views')
 app.set('view engine', 'ejs')  
