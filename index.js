@@ -1,3 +1,32 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@aungbhonemyat
+Learn Git and GitHub without any code!
+
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+1
+0
+
+    0
+
+aungbhonemyat/hall_rental
+Code
+Issues 0
+Pull requests 0
+Actions
+Projects 0
+Wiki
+Security
+Insights
+Settings
+hall_rental/index.js
+@aungbhonemyat aungbhonemyat Update index.js 86f1362 19 hours ago
+577 lines (503 sloc) 17.6 KB
 'use strict';
 
 // Imports dependencies and set up http server
@@ -8,7 +37,7 @@ requestify= require('requestify'),
   bodyParser = require('body-parser'),
   PageAccessToken='EAAFYRyzpU1IBAHNwh0nZCbZBxZBzgEuO7cjaxTCsGAJbeZCA2IZAgmiVb0c8AaVSJUJzrdwYTlekEFlcKgdH3hNRMsDJiPEtjney2BJK6vGH3u6HhoV3ZB2YK3ZB5vtLrza26ZBRJicn4ZC4RpRgq6t80p9Ng8fo8ZCmGZADLprfF2WcDZAZBTRp0nwb6',
   app = express().use(bodyParser.json());
-  const sendmessageurl = 'https://graph.facebook.com/v5.0/me/messages?access_token='+PageAccessToken
+  const sendmessageurl = 'https://graph.facebook.com/v4.0/me/messages?access_token='+PageAccessToken
   const admin = require('firebase-admin');
 
 const serviceAccount = ({
@@ -52,7 +81,7 @@ app.set('view engine', 'ejs')
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 app.get('/', (req, res)=>{
-	res.send("Hello World");
+  res.send("Hello World");
 })
 
 app.get('/weddingReg/:id', function(req, res){
@@ -211,7 +240,7 @@ app.post('/webhook', (req, res) => {
         "id":senderID
       },
         "message":{
-        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Events? Car or Motorbike? `,
+        "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Wedding? Car or Motorbike? `,
         
         "quick_replies":[
         {
@@ -575,3 +604,18 @@ if (userInput == 'Skip'){
   }
 
 });
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
