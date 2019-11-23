@@ -468,7 +468,7 @@ if (userInput == 'Buy'){
   "template_type":"generic",
   "elements":[{
             "title":"item1",
-            "image_url":"https://images5.alphacoders.com/616/616431.jpg",
+            "image_url":"https://images4.alphacoders.com/260/260758.jpg",
             "subtitle":"price 10000 MMK",
             "buttons":[{
                 "type": "postback",
@@ -478,7 +478,7 @@ if (userInput == 'Buy'){
             ]      
           },{
             "title":"item2",
-            "image_url":"https://images2.alphacoders.com/787/787147.jpg",
+            "image_url":"https://images5.alphacoders.com/773/773612.jpg",
             "subtitle":"price 15000 MMK",
             "buttons":[{
                 "type": "postback",
@@ -488,7 +488,7 @@ if (userInput == 'Buy'){
             ]      
           },{
             "title":"item3",
-            "image_url":"https://images7.alphacoders.com/697/697523.jpg",
+            "image_url":"https://images7.alphacoders.com/779/779169.jpg",
             "subtitle":"price 10000 MMK",
             "buttons":[{
                 "type": "postback",
