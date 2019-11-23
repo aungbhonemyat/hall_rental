@@ -163,7 +163,7 @@ app.post('/webhook', (req, res) => {
             "id":senderID
         },
         "message":{
-          "text":"Choose function",
+          "text":"Hi Admin ! What reports would you like to see?",
           "quick_replies":[
           {
             "content_type":"text",
