@@ -1,32 +1,4 @@
 
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@aungbhonemyat
-Learn Git and GitHub without any code!
-
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-1
-0
-
-    0
-
-aungbhonemyat/hall_rental
-Code
-Issues 0
-Pull requests 0
-Actions
-Projects 0
-Wiki
-Security
-Insights
-Settings
-hall_rental/index.js
-@aungbhonemyat aungbhonemyat Update index.js 86f1362 19 hours ago
-577 lines (503 sloc) 17.6 KB
 'use strict';
 
 // Imports dependencies and set up http server
