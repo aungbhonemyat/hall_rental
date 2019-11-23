@@ -157,7 +157,7 @@ app.post('/webhook', (req, res) => {
       console.log('error', error);  
     });
         } else {  
-        requestify.postback(sendmessageurl,
+        requestify.post(sendmessageurl,
         {
           "recipient":{
             "id":senderID
@@ -318,7 +318,7 @@ app.post('/webhook', (req, res) => {
 //   }
 // })
 //   }
-  
+
   if (userInput == "Motorbike"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
   var eventId = payload[1]
