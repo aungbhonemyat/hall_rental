@@ -138,10 +138,10 @@ app.post('/webhook', (req, res) => {
           "type":"template",
             "payload": {
             "template_type":"button",
-            "text":"Hello Admin.Welcome to Hall Rental Service.",
+            "text":"Hello!! Welcome to Hall Rental Service.",
             "buttons":[{
               "type":"postback",
-              "title":"Check",
+              "title":"Guest",
               "payload":"Guest"
             },{
               "type":"postback",
