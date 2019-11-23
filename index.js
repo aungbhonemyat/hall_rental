@@ -157,13 +157,31 @@ app.post('/webhook', (req, res) => {
       console.log('error', error);  
     });
         } else {  
-        //workerFlow
-        console.log('worker flow')
+        requestify.postback(sendmessageurl,
+        {
+          "recipient":{
+            "id":senderID
+        },
+        "message":{
+          "text":"Choose function",
+          "quick_replies":[
+          {
+            "content_type":"text",
+            "title":"Event List",
+            "payload":"eventlist"
+          },
+          {
+            "content_type":"text",
+            "title":"Guest List",
+            "payload":"guestlist"
+          }]
+        }
         
+      
+    }).then(result=>{console.log("Ok")}).catch(err=>{console.log("err",err)})
       }
-    })
-      }
-    
+})
+  }
  
 
     //end
