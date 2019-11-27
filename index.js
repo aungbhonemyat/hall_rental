@@ -103,23 +103,22 @@ app.post('/webhook', (req, res) => {
 
     // Iterates over each entry - there may be multiple if batched
     body.entry.forEach(function(entry) {
-
       // Gets the message. entry.messaging is an array, but 
       // will only ever contain one message, so we get index 0
-      let webhook_event = entry.messaging[0];
-      console.log(webhook_event);
+    let webhook_event = entry.messaging[0];
+    console.log(webhook_event);
         
     var senderID = webhook_event.sender.id;
     if(webhook_event.postback){
-    var userInput = webhook_event.postback.payload;
-    console.log('reply', userInput);
+      var userInput = webhook_event.postback.payload;
+      console.log('reply', userInput);
     }
-  if(webhook_event.message){
-    if(webhook_event.message.text){
-    var userInput=webhook_event.message.text;
-    console.log('userInput', userInput);
-  }
-}
+    if(webhook_event.message){
+      if(webhook_event.message.text){
+      var userInput=webhook_event.message.text;
+      console.log('userInput', userInput);
+      }
+    }
 
     //start
     //Welcome Message
@@ -129,34 +128,35 @@ app.post('/webhook', (req, res) => {
       if(result.empty){     
           console.log('empty relt')
           requestify.post(sendmessageurl,
-      { 
-        "recipient":{
-        "id":senderID
-        },
-      "message":{
-        "attachment":{
-          "type":"template",
-            "payload": {
-            "template_type":"button",
-            "text":"Hello!! Welcome to Hall Rental Service.",
-            "buttons":[{
-              "type":"postback",
-              "title":"Guest",
-              "payload":"Guest"
-            },{
-              "type":"postback",
-              "title":"Host",
-              "payload":"Host"
-            }]
-          }
+            { 
+              "recipient":{
+              "id":senderID
+              },
+            "message":{
+              "attachment":{
+                "type":"template",
+                  "payload": {
+                  "template_type":"button",
+                  "text":"Hello!! Welcome to Hall Rental Service.",
+                  "buttons":[{
+                    "type":"postback",
+                    "title":"Guest",
+                    "payload":"Guest"
+                  },{
+                    "type":"postback",
+                    "title":"Host",
+                    "payload":"Host"
+                  }]
+                }
+              }
+            }
+          }).then(function(success){
+            console.log('successful template');
+          }).catch(function(error){
+            console.log('error', error);  
+          });
         }
-      }
-    }).then(function(success){
-      console.log('successful template');
-    }).catch(function(error){
-      console.log('error', error);  
-    });
-        } else {  
+         else {  
         requestify.post(sendmessageurl,
         {
           "recipient":{
@@ -574,21 +574,21 @@ if (userInput == 'Skip'){
          
           "message":{
           "text":"Looking forward from the celebration event! "
-}
+  }
 
+      
     
-  
-})
+  })
 }
 
 
   });
 
     // Returns a '200 OK' response to all requests
-    res.status(200).send('EVENT_RECEIVED');
+   // res.status(200).send('EVENT_RECEIVED');
   } else {
     // Returns a '404 Not Found' if event is not from a page subscription
-    res.sendStatus(404);
+    console.log("it is not page")
   }
 
 });
