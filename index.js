@@ -177,8 +177,8 @@ app.post('/webhook', (req, res) => {
           }]
         }
         
-      
-    }).then(result=>{ res.send("okay"); console.log("Ok")}).catch(err=>{console.log("err",err)})
+      res.send("ok ")
+    }).then(result=>{  console.log("Ok")}).catch(err=>{console.log("err",err)})
       }
 })
   }
