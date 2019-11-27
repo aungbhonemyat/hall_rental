@@ -106,7 +106,7 @@ app.post('/webhook', (req, res) => {
       // Gets the message. entry.messaging is an array, but 
       // will only ever contain one message, so we get index 0
     let webhook_event = entry.messaging[0];
-    console.log(webhook_event);
+    console.log("webhook event", webhook_event);
         
     var senderID = webhook_event.sender.id;
     if(webhook_event.postback){
@@ -484,54 +484,54 @@ if (userInput == 'Buy'){
         "attachment":{
           "type":"template",
             "payload": {
-  "template_type":"generic",
-  "elements":[{
-            "title":"item1",
-            "image_url":"https://images4.alphacoders.com/260/260758.jpg",
-            "subtitle":"price 10000 MMK",
-            "buttons":[{
-                "type": "postback",
-                "title":"Buy",
-                "payload":"item1"
-              }                    
-            ]      
-          },{
-            "title":"item2",
-            "image_url":"https://images5.alphacoders.com/773/773612.jpg",
-            "subtitle":"price 15000 MMK",
-            "buttons":[{
-                "type": "postback",
-                "title":"Buy",
-                "payload":"item2"
-              }                     
-            ]      
-          },{
-            "title":"item3",
-            "image_url":"https://images7.alphacoders.com/779/779169.jpg",
-            "subtitle":"price 10000 MMK",
-            "buttons":[{
-                "type": "postback",
-                "title":"Buy",
-                "payload":"item3"
-                
-              }                    
-            ]      
-          },{
-            "title":"You can leave if you don't like it!!!",
-            "subtitle":"Cick Cancel button",
-            "buttons":[{
-                "type": "postback",
-                "title":"CANCEL",
-                "payload":"Skip"
-                
-              }                    
-            ]      
+                "template_type":"generic",
+                "elements":[{
+                          "title":"item1",
+                          "image_url":"https://images4.alphacoders.com/260/260758.jpg",
+                          "subtitle":"price 10000 MMK",
+                          "buttons":[{
+                              "type": "postback",
+                              "title":"Buy",
+                              "payload":"item1"
+                            }                    
+                          ]      
+                          },{
+                            "title":"item2",
+                            "image_url":"https://images5.alphacoders.com/773/773612.jpg",
+                            "subtitle":"price 15000 MMK",
+                            "buttons":[{
+                                "type": "postback",
+                                "title":"Buy",
+                                "payload":"item2"
+                              }                     
+                            ]      
+                          },{
+                            "title":"item3",
+                            "image_url":"https://images7.alphacoders.com/779/779169.jpg",
+                            "subtitle":"price 10000 MMK",
+                            "buttons":[{
+                                "type": "postback",
+                                "title":"Buy",
+                                "payload":"item3"
+                                
+                              }                    
+                            ]      
+                          },{
+                            "title":"You can leave if you don't like it!!!",
+                            "subtitle":"Cick Cancel button",
+                            "buttons":[{
+                                "type": "postback",
+                                "title":"CANCEL",
+                                "payload":"Skip"
+                                
+                              }                    
+                            ]      
+                          }
+                        ]
+              }
+            }
           }
-          ]
-        }
-      }
-    }
-  })
+      })
 }
   
 
