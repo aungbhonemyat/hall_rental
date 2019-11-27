@@ -585,10 +585,11 @@ if (userInput == 'Skip'){
   });
 
     // Returns a '200 OK' response to all requests
-   // res.status(200).send('EVENT_RECEIVED');
+    res.status(200).send('EVENT_RECEIVED');
   } else {
     // Returns a '404 Not Found' if event is not from a page subscription
     console.log("it is not page")
+     res.status(400).send('EVENT_RECEIVED');
   }
 
 });
