@@ -110,13 +110,13 @@ app.post('/webhook', (req, res) => {
         
     var senderID = webhook_event.sender.id;
     if(webhook_event.postback){
-      var userInput = webhook_event.postback.payload;
-      console.log('reply', userInput);
+          var userInput = webhook_event.postback.payload;
+          console.log('reply postback', userInput);
     }
     if(webhook_event.message){
       if(webhook_event.message.text){
-      var userInput=webhook_event.message.text;
-      console.log('userInput', userInput);
+          var userInput=webhook_event.message.text;
+          console.log('userInput text', userInput);
       }
     }
 
@@ -190,7 +190,6 @@ app.post('/webhook', (req, res) => {
   
 
 //Guest Flow
-
   if(userInput == 'Guest' || userInput == 'Guest'){ 
     requestify.post(sendmessageurl,
       { 
@@ -207,117 +206,117 @@ app.post('/webhook', (req, res) => {
     });
   } 
 
-//     if(userInput.includes('Eve')){
-//     console.log('user OTP is:', userInput)
-//     db.collection('Events').where('eventOTP', '==', userInput).get().then(function(result){
-//       if(result.empty){
-//         console.log('no event')
-//   }else{
-//     result.forEach(function(relt){
-//       var eventType = relt.data().eventType
-//       console.log('ur event is:', eventType)
-//       if (eventType == 'Wedding'){
-//         var bride = relt.data().eventDetails.bride
-//         var groom = relt.data().eventDetails.groom
-//         var date = relt.data().eventDetails.date
-      
-//       requestify.post(sendmessageurl,
-//       { 
-//         "recipient":{
-//         "id":senderID
-//       },
-//         "message":{
-//         "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Wedding? Car or Motorbike? `,
-        
-//         "quick_replies":[
-//         {
-//           "content_type":"text",
-//           "title":"Car",
-//           "payload":"car "+relt.data().eventId
-//         },
-//         {
-//           "content_type":"text",
-//           "title":"Motorbike",
-//           "payload":"motorbike "+relt.data().eventId
-//         }
-//         ]
-//       }
-//     }).then(function(success){
-//       console.log('successful template');
-//     }).catch(function(error){
-//       console.log('error', error);  
-//     });
+          if(userInput.includes('Eve')){
+          console.log('user OTP is:', userInput)
+          db.collection('Events').where('eventOTP', '==', userInput).get().then(function(result){
+            if(result.empty){
+              console.log('no event')
+        }else{
+          result.forEach(function(relt){
+            var eventType = relt.data().eventType
+            console.log('ur event is:', eventType)
+            if (eventType == 'Wedding'){
+              var bride = relt.data().eventDetails.bride
+              var groom = relt.data().eventDetails.groom
+              var date = relt.data().eventDetails.date
+            
+            requestify.post(sendmessageurl,
+            { 
+              "recipient":{
+              "id":senderID
+            },
+              "message":{
+              "text":`Your event is wedding of ${bride} and ${groom} on ${date}.How do you come to the Wedding? Car or Motorbike? `,
+              
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Car",
+                "payload":"car "+relt.data().eventId
+              },
+              {
+                "content_type":"text",
+                "title":"Motorbike",
+                "payload":"motorbike "+relt.data().eventId
+              }
+              ]
+            }
+          }).then(function(success){
+            console.log('successful template');
+          }).catch(function(error){
+            console.log('error', error);  
+          });
 
-//       }
-//       if(eventType == 'Party'){
-//         var type = relt.data().eventDetails.partyType
-//         var guest = relt.data().eventDetails.partyGuests
-//         var date = relt.data().eventDetails.date
-      
-//       requestify.post(sendmessageurl,
-//       { 
-//         "recipient":{
-//         "id":senderID
-//       },
-//         "message":{
-//         "text":`Your event is ${type} party for ${guest} on ${date}.How do you come to the Party? Car or Motorbike?`,
+            }
+            if(eventType == 'Party'){
+              var type = relt.data().eventDetails.partyType
+              var guest = relt.data().eventDetails.partyGuests
+              var date = relt.data().eventDetails.date
+            
+            requestify.post(sendmessageurl,
+            { 
+              "recipient":{
+              "id":senderID
+            },
+              "message":{
+              "text":`Your event is ${type} party for ${guest} on ${date}.How do you come to the Party? Car or Motorbike?`,
 
-//         "quick_replies":[
-//         {
-//           "content_type":"text",
-//           "title":"Car",
-//           "payload":"car "+relt.data().eventId
-//         },
-//         {
-//           "content_type":"text",
-//           "title":"Motorbike",
-//           "payload":"motorbike "+relt.data().eventId
-//         }
-//         ]
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Car",
+                "payload":"car "+relt.data().eventId
+              },
+              {
+                "content_type":"text",
+                "title":"Motorbike",
+                "payload":"motorbike "+relt.data().eventId
+              }
+              ]
 
-//       }
-//     }).then(function(success){
-//       console.log('successful template');
-//     }).catch(function(error){
-//       console.log('error', error);  
-//     });
-//       }
-//       if(eventType == 'Seminar'){
-//         var name = relt.data().eventDetails.seminarName
-//         var guest = relt.data().eventDetails.guests
-//         var date = relt.data().eventDetails.date
-      
-//       requestify.post(sendmessageurl,
-//       { 
-//         "recipient":{
-//         "id":senderID
-//       },
-//         "message":{
-//         "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}.How do you come to the Seminar? Car or Motorbike?`,
-        
-//         "quick_replies":[
-//         {
-//           "content_type":"text",
-//           "title":"Car",
-//           "payload":"car "+relt.data().eventId
-//         },
-//         {
-//           "content_type":"text",
-//           "title":"Motorbike",
-//           "payload":"motorbike "+relt.data().eventId
-//         }
-//         ]
-//       }
-//     }).then(function(success){
-//       console.log('successful template');
-//     }).catch(function(error){
-//       console.log('error', error);  
-//     });
-//       }
-//     })
-//   }
-// })
-//   }
+            }
+          }).then(function(success){
+            console.log('successful template');
+          }).catch(function(error){
+            console.log('error', error);  
+          });
+            }
+            if(eventType == 'Seminar'){
+              var name = relt.data().eventDetails.seminarName
+              var guest = relt.data().eventDetails.guests
+              var date = relt.data().eventDetails.date
+            
+            requestify.post(sendmessageurl,
+            { 
+              "recipient":{
+              "id":senderID
+            },
+              "message":{
+              "text":`Your speaker is ${name} and total guest will be ${guest} on ${date}.How do you come to the Seminar? Car or Motorbike?`,
+              
+              "quick_replies":[
+              {
+                "content_type":"text",
+                "title":"Car",
+                "payload":"car "+relt.data().eventId
+              },
+              {
+                "content_type":"text",
+                "title":"Motorbike",
+                "payload":"motorbike "+relt.data().eventId
+              }
+              ]
+            }
+          }).then(function(success){
+            console.log('successful template');
+          }).catch(function(error){
+            console.log('error', error);  
+          });
+            }
+          })
+        }
+      })
+        }
 
   if (userInput == "Motorbike"){
   var payload = webhook_event.message.quick_reply.payload.split(' ')
